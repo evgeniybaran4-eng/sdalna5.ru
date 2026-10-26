@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Былина «Садко»: читать онлайн, краткое содержание и анализ произведения — Справочник школьника</title>
+    <title>Былина «Садко»: читать онлайн, краткое содержание и анализ произведения — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения bylina sadko chitat onlayn bespla для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/b/by/bylina-sadko-chitat-onlayn-bespla.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,40 +144,16 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание былины</a></li><li><a href="#toc-3">Главная мысль и идея произведения</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Материал для читательского дневника</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/na/narodnaya-bylina-sadko-chitatelsk.html">Былина «Садко»: читательский дневник, анализ и главная мысль</a></li><li><a href="/articles/b/by/bylina-pro-dobrynyu-nikiticha-i-zmeya-go.html">Былина о Добрыне Никитиче и Змее Горыныче: анализ, сюжет и читательский дневник</a></li><li><a href="/articles/b/by/bylina-pervyy-boy-ili-muromca-chita.html">Былина «Первый бой Ильи Муромца»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/b/by/bylina-ilya-muromec-i-solovey-razboy.html">Былина «Илья Муромец и Соловей-разбойник»: анализ, герои и читательский дневник</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Былина «Садко»: читать онлайн, краткое содержание и анализ произведения</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Былина о Садко — одно из самых ярких и увлекательных произведений русского героического и волшебного эпоса. В ней удивительным образом переплелись реальная история средневекового Новгорода, элементы морской сказки и глубокая мораль. Произведение входит в школьную программу по литературе и традиционно изучается в средних классах.</p><h2 id="toc-2" id="toc-2">Краткое содержание былины</h2><p>Действие начинается в богатом торговом городе Новгороде. Гусляр Садко был беден, но талантлив: его игра на гуслях очаровывала всех вокруг. Однажды его перестали приглашать на пиры, и грустный гусляр отправился на берег озера Ильмень.</p><ul><li><strong>Встреча с морским царем:</strong> Игра Садко так понравилась владыке озера, что тот пообещал ему помощь. Царь велел Садко побиться о заклад с богатыми новгородскими купцами на три лавки товара, что в Ильмене есть рыба «золотые перья».</li><li><strong>Победа и богатство:</strong> С помощью морского царя Садко выиграл спор, стал богатейшим купцом и построил палаты в Новгороде.</li><li><strong>Морское путешествие:</strong> Спустя годы огромный флот Садко попал в шторм на синем море. Дружина поняла, что морской царь требует дани — живого человека. Жребий пал на Садко.</li><li><strong>В подводном царстве:</strong> Садко спустился на дно морское, где царь потребовал от него играть на гуслях и захотел женить его на морской царевне. Садко чуть не остался на дне навсегда, но мудрый совет (по одной из версий — святого Николая Можайского) помог ему порвать струны гуслей и отказаться от женитьбы.</li><li><strong>Возвращение домой:</strong> Садко проснулся на крутом берегу реки Черехенки, а вскоре к нему вернулась и его дружина на кораблях. В благодарность за спасение Садко построил церковь Николы Можайского.</li></ul><h2 id="toc-3" id="toc-3">Главная мысль и идея произведения</h2><p>Главная мысль былины заключается в том, что человек не должен терять меру и гордиться своим богатством перед лицом высших сил. Садко прошел через испытание медными трубами — бедностью, богатством и властью стихии. Произведение учит ценить верных друзей, помнить о своей родине и оставаться верным моральным принципам, несмотря на любые искушения.</p><h2 id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Садко</strong> — талантливый гусляр, а затем удачливый купец. Он смел, находчив, любит родной Новгород, но бывает излишне самоуверен. В критической ситуации проявляет ум и волю к спасению.</li><li><strong>Морской царь</strong> — владыка водной стихии, покровитель искусств, но в то же время капризный и властный персонаж, стремящийся удержать Садко у себя.</li><li><strong>Новгородские купцы</strong> — собирательный образ богатых людей того времени, которые сначала смотрят на Садко свысока, а затем признают его авторитет.</li></ul><h2 id="toc-5" id="toc-5">Материал для читательского дневника</h2><blockquote><p><strong>Автор:</strong> Народное творчество (русская былина)</p><p><strong>Жанр:</strong> Героико-волшебная былина</p><p><strong>Главные герои:</strong> Садко, морской царь, морская царевна, новгородские купцы.</p><p><strong>Чему учит:</strong> Былина учит не гордиться богатством, любить свою родину, ценить верность и талант, а также находить выход из самых сложных жизненных ситуаций.</p></blockquote>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Былина о Садко — одно из самых ярких и увлекательных произведений русского героического и волшебного эпоса. В ней удивительным образом переплелись реальная история средневекового Новгорода, элементы морской сказки и глубокая мораль. Произведение входит в школьную программу по литературе и традиционно изучается в средних классах.</p><h2 id="toc-2" id="toc-2" id="toc-2">Краткое содержание былины</h2><p>Действие начинается в богатом торговом городе Новгороде. Гусляр Садко был беден, но талантлив: его игра на гуслях очаровывала всех вокруг. Однажды его перестали приглашать на пиры, и грустный гусляр отправился на берег озера Ильмень.</p><ul><li><strong>Встреча с морским царем:</strong> Игра Садко так понравилась владыке озера, что тот пообещал ему помощь. Царь велел Садко побиться о заклад с богатыми новгородскими купцами на три лавки товара, что в Ильмене есть рыба «золотые перья».</li><li><strong>Победа и богатство:</strong> С помощью морского царя Садко выиграл спор, стал богатейшим купцом и построил палаты в Новгороде.</li><li><strong>Морское путешествие:</strong> Спустя годы огромный флот Садко попал в шторм на синем море. Дружина поняла, что морской царь требует дани — живого человека. Жребий пал на Садко.</li><li><strong>В подводном царстве:</strong> Садко спустился на дно морское, где царь потребовал от него играть на гуслях и захотел женить его на морской царевне. Садко чуть не остался на дне навсегда, но мудрый совет (по одной из версий — святого Николая Можайского) помог ему порвать струны гуслей и отказаться от женитьбы.</li><li><strong>Возвращение домой:</strong> Садко проснулся на крутом берегу реки Черехенки, а вскоре к нему вернулась и его дружина на кораблях. В благодарность за спасение Садко построил церковь Николы Можайского.</li></ul><h2 id="toc-3" id="toc-3" id="toc-3">Главная мысль и идея произведения</h2><p>Главная мысль былины заключается в том, что человек не должен терять меру и гордиться своим богатством перед лицом высших сил. Садко прошел через испытание медными трубами — бедностью, богатством и властью стихии. Произведение учит ценить верных друзей, помнить о своей родине и оставаться верным моральным принципам, несмотря на любые искушения.</p><h2 id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Садко</strong> — талантливый гусляр, а затем удачливый купец. Он смел, находчив, любит родной Новгород, но бывает излишне самоуверен. В критической ситуации проявляет ум и волю к спасению.</li><li><strong>Морской царь</strong> — владыка водной стихии, покровитель искусств, но в то же время капризный и властный персонаж, стремящийся удержать Садко у себя.</li><li><strong>Новгородские купцы</strong> — собирательный образ богатых людей того времени, которые сначала смотрят на Садко свысока, а затем признают его авторитет.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5">Материал для читательского дневника</h2><blockquote><p><strong>Автор:</strong> Народное творчество (русская былина)</p><p><strong>Жанр:</strong> Героико-волшебная былина</p><p><strong>Главные герои:</strong> Садко, морской царь, морская царевна, новгородские купцы.</p><p><strong>Чему учит:</strong> Былина учит не гордиться богатством, любить свою родину, ценить верность и талант, а также находить выход из самых сложных жизненных ситуаций.</p></blockquote>
+                    
                     
                     
                     </div>
@@ -189,6 +166,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание былины</a></li><li><a href="#toc-3">Главная мысль и идея произведения</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Материал для читательского дневника</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/na/narodnaya-bylina-sadko-chitatelsk.html">Былина «Садко»: читательский дневник, анализ и главная мысль</a></li><li><a href="/articles/b/by/bylina-pro-dobrynyu-nikiticha-i-zmeya-go.html">Былина о Добрыне Никитиче и Змее Горыныче: анализ, сюжет и читательский дневник</a></li><li><a href="/articles/b/by/bylina-pervyy-boy-ili-muromca-chita.html">Былина «Первый бой Ильи Муромца»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/b/by/bylina-ilya-muromec-i-solovey-razboy.html">Былина «Илья Муромец и Соловей-разбойник»: анализ, герои и читательский дневник</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -198,7 +200,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

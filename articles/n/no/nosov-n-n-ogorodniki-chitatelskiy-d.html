@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Читательский дневник: «Огородники» Николая Носова — анализ и главная мысль — Справочник школьника</title>
+    <title>Читательский дневник: «Огородники» Николая Носова — анализ и главная мысль — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения nosov n n ogorodniki chitatelskiy d для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-ogorodniki-chitatelskiy-d.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,40 +144,16 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание</a></li><li><a href="#toc-3">Главная мысль рассказа</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Элементы для читательского дневника</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Читательский дневник: «Огородники» Николая Носова — анализ и главная мысль</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Рассказ Николая Николаевича Носова «Огородники» — это прекрасное, поучительное и очень забавное произведение о труде, ответственности и детской инициативе. Оно входит в круг чтения школьников младших классов и отлично подходит для оформления читательского дневника.</p><h2 id="toc-2" id="toc-2">Краткое содержание</h2><p>Главные герои рассказа, друзья Коля и Мишка, загораются идеей вырастить собственный огород. Насмотревшись на то, как взрослые занимаются земледелием, мальчики решают, что они тоже смогут без труда получить богатый урожай. Ребята находят заброшенный участок земли за школой, с энтузиазмом берутся за лопаты, вскапывают грядки и сажают семена.</p><p>Однако вскоре выясняется, что просто посадить семена недостаточно. Огород требует ежедневного ухода: поливки, прополки от сорняков и защиты от вредителей. Лень и нетерпение начинают брать верх, но мальчики преодолевают трудности ради общей цели. В финале рассказа герои с гордостью пожинают плоды своего труда и понимают цену настоящей работы.</p><h2 id="toc-3" id="toc-3">Главная мысль рассказа</h2><p>Главная мысль произведения заключается в том, что любой результат требует упорного труда, терпения и ответственности. Автор показывает, что красивая идея или мечта легко реализуются только на словах, а на деле любое полезное дело сопряжено с преодолением трудностей. Носов учит юных читателей доводить начатое до конца и ценить чужой и свой труд.</p><h2 id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Мишка</strong> — заводила и оптимист. Именно ему первому приходит в голову идея заняться огородничеством. Он полон энергии, но иногда склонен недооценивать масштабы предстоящих трудностей.</li><li><strong>Коля</strong> — верный друг Мишки, помощник и соавтор всех затеей. Вместе они составляют отличную команду, которая способна справиться с любыми преградами благодаря взаимовыручке.</li></ul><h2 id="toc-5" id="toc-5">Элементы для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Николаевич Носов</li><li><strong>Название:</strong> Огородники</li><li><strong>Жанр:</strong> Рассказ</li><li><strong>Главные герои:</strong> Мишка, Коля</li><li><strong>Чему учит:</strong> Трудолюбию, терпению, ответственности за свои поступки, умению работать в команде и доводить начатое дело до конца.</li><li><strong>Мое мнение (отзыв):</strong> Рассказ очень понравился, потому что он написан с юмором и жизненно. Приключения героев вызывают улыбку, но при этом заставляют задуматься о важности труда.</li></ul>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Рассказ Николая Николаевича Носова «Огородники» — это прекрасное, поучительное и очень забавное произведение о труде, ответственности и детской инициативе. Оно входит в круг чтения школьников младших классов и отлично подходит для оформления читательского дневника.</p><h2 id="toc-2" id="toc-2" id="toc-2">Краткое содержание</h2><p>Главные герои рассказа, друзья Коля и Мишка, загораются идеей вырастить собственный огород. Насмотревшись на то, как взрослые занимаются земледелием, мальчики решают, что они тоже смогут без труда получить богатый урожай. Ребята находят заброшенный участок земли за школой, с энтузиазмом берутся за лопаты, вскапывают грядки и сажают семена.</p><p>Однако вскоре выясняется, что просто посадить семена недостаточно. Огород требует ежедневного ухода: поливки, прополки от сорняков и защиты от вредителей. Лень и нетерпение начинают брать верх, но мальчики преодолевают трудности ради общей цели. В финале рассказа герои с гордостью пожинают плоды своего труда и понимают цену настоящей работы.</p><h2 id="toc-3" id="toc-3" id="toc-3">Главная мысль рассказа</h2><p>Главная мысль произведения заключается в том, что любой результат требует упорного труда, терпения и ответственности. Автор показывает, что красивая идея или мечта легко реализуются только на словах, а на деле любое полезное дело сопряжено с преодолением трудностей. Носов учит юных читателей доводить начатое до конца и ценить чужой и свой труд.</p><h2 id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Мишка</strong> — заводила и оптимист. Именно ему первому приходит в голову идея заняться огородничеством. Он полон энергии, но иногда склонен недооценивать масштабы предстоящих трудностей.</li><li><strong>Коля</strong> — верный друг Мишки, помощник и соавтор всех затеей. Вместе они составляют отличную команду, которая способна справиться с любыми преградами благодаря взаимовыручке.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5">Элементы для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Николаевич Носов</li><li><strong>Название:</strong> Огородники</li><li><strong>Жанр:</strong> Рассказ</li><li><strong>Главные герои:</strong> Мишка, Коля</li><li><strong>Чему учит:</strong> Трудолюбию, терпению, ответственности за свои поступки, умению работать в команде и доводить начатое дело до конца.</li><li><strong>Мое мнение (отзыв):</strong> Рассказ очень понравился, потому что он написан с юмором и жизненно. Приключения героев вызывают улыбку, но при этом заставляют задуматься о важности труда.</li></ul>
+                    
                     
                     
                     </div>
@@ -189,6 +166,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание</a></li><li><a href="#toc-3">Главная мысль рассказа</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Элементы для читательского дневника</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -198,7 +200,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Былина «Вольга и Микула Селянинович»: анализ, герои и главная мысль — Справочник школьника</title>
+    <title>Былина «Вольга и Микула Селянинович»: анализ, герои и главная мысль — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения bylina volga i mikula selyaninovich ch для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/b/by/bylina-volga-i-mikula-selyaninovich-ch.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,62 +144,38 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Главные герои былины</a></li><li><a href="#toc-3">Краткое содержание</a></li><li><a href="#toc-4">Главная мысль произведения</a></li><li><a href="#toc-5">Для читательского дневника</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/na/narodnaya-bylina-sadko-chitatelsk.html">Былина «Садко»: читательский дневник, анализ и главная мысль</a></li><li><a href="/articles/b/by/bylina-pro-dobrynyu-nikiticha-i-zmeya-go.html">Былина о Добрыне Никитиче и Змее Горыныче: анализ, сюжет и читательский дневник</a></li><li><a href="/articles/b/by/bylina-pervyy-boy-ili-muromca-chita.html">Былина «Первый бой Ильи Муромца»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/b/by/bylina-ilya-muromec-i-solovey-razboy.html">Былина «Илья Муромец и Соловей-разбойник»: анализ, герои и читательский дневник</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Былина «Вольга и Микула Селянинович»: анализ, герои и главная мысль</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Введение</h2>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Введение</h2>
 <p>Былина «Вольга и Микула Селянинович» — одно из самых известных произведений русского героического эпоса. В ней ярко отражены представления древних славян о справедливости, силе, честном труде и уважении к человеку-земледельцу. Былина показывает гармоничное сочетание княжеской власти и мощи простого крестьянина-труженика.</p>
 
-<h2 id="toc-2" id="toc-2">Главные герои былины</h2>
+<h2 id="toc-2" id="toc-2" id="toc-2">Главные герои былины</h2>
 <ul>
   <li><strong>Вольга Святославич</strong> — молодой князь, умный, образованный и смелый. Он умеет собирать дружину, знает «хитрости-мудрости», но поначалу недооценивает физический труд и силу простого народа.</li>
   <li><strong>Микула Селянинович</strong> — богатырь-пахарь. Воплощение физической мощи, трудолюбия и народной мудрости. Он легко справляется с тем, что не под силу всей княжеской дружине, и при этом предан своей земле.</li>
 </ul>
 
-<h2 id="toc-3" id="toc-3">Краткое содержание</h2>
+<h2 id="toc-3" id="toc-3" id="toc-3">Краткое содержание</h2>
 <p>Князь Вольга собирает большую дружину и отправляется в путь, чтобы собрать дань с городов Гурчевца и Ореховца. Отъехав от Киева, он слышит в поле странный звук: кто-то с громким свистом пашет землю, погоняя лошадь. Вольга посылает гонцов догнать пахаря, но ни быстрые кони, ни дружинники не могут не только догнать его, но даже вытащить соху из земли.</p>
 <p>Тогда Вольга сам отправляется к пахарю. Он знакомится с Микулой Селяниновичем и предлагает ему пойти в дружину. Микула соглашается и перед уходом совершает удивительный поступок: легко выдергивает соху из земли и забралывает ее в ракитов куст, чтобы никто не смог ее украсть. Позже выясняется, что Микула едет в те самые города за данью, и именно он является их хозяином.</p>
 
-<h2 id="toc-4" id="toc-4">Главная мысль произведения</h2>
+<h2 id="toc-4" id="toc-4" id="toc-4">Главная мысль произведения</h2>
 <p>Главная мысль былины заключается в прославлении мирного крестьянского труда. Автор показывает, что истинная сила и опора государства — это не княжеская дружина с мечами, а крестьянин-пахарь, который кормит всю Русь. Труд на земле в сознании народа выше и важнее воинских походов ради наживы.</p>
 
-<h2 id="toc-5" id="toc-5">Для читательского дневника</h2>
+<h2 id="toc-5" id="toc-5" id="toc-5">Для читательского дневника</h2>
 <ol>
   <li><strong>Жанр:</strong> былина (героический эпос).</li>
   <li><strong>Главные герои:</strong> князь Вольга и пахарь Микула.</li>
   <li><strong>Чему учит:</strong> уважению к труду, скромности, пониманию того, что созидательный труд важнее разрушительных войн.</li>
   <li><strong>Мое мнение:</strong> Былина очень интересна тем, что в ней прославляется не традиционный воин-богатырь, а обычный труженик, чья сила превосходит силу князя и его дружины.</li>
 </ol>
+                    
                     
                     
                     </div>
@@ -211,6 +188,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Главные герои былины</a></li><li><a href="#toc-3">Краткое содержание</a></li><li><a href="#toc-4">Главная мысль произведения</a></li><li><a href="#toc-5">Для читательского дневника</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/na/narodnaya-bylina-sadko-chitatelsk.html">Былина «Садко»: читательский дневник, анализ и главная мысль</a></li><li><a href="/articles/b/by/bylina-pro-dobrynyu-nikiticha-i-zmeya-go.html">Былина о Добрыне Никитиче и Змее Горыныче: анализ, сюжет и читательский дневник</a></li><li><a href="/articles/b/by/bylina-pervyy-boy-ili-muromca-chita.html">Былина «Первый бой Ильи Муромца»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/b/by/bylina-ilya-muromec-i-solovey-razboy.html">Былина «Илья Муромец и Соловей-разбойник»: анализ, герои и читательский дневник</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -220,7 +222,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

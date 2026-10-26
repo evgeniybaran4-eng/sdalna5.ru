@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Читательский дневник: «Леденец» Николая Носова — анализ и главная мысль — Справочник школьника</title>
+    <title>Читательский дневник: «Леденец» Николая Носова — анализ и главная мысль — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения nosov n n ledenec chitatelskiy dnevn для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-ledenec-chitatelskiy-dnevn.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,40 +144,16 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание рассказчика</a></li><li><a href="#toc-3">Главная мысль и мораль</a></li><li><a href="#toc-4">Главные герои</a></li><li><a href="#toc-5">Черты для читательского дневника</a></li><li><a href="#toc-6">Заключение</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Читательский дневник: «Леденец» Николая Носова — анализ и главная мысль</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Рассказ Николая Николаевича Носова «Леденец» — это прекрасное, поучительное и очень забавное произведение для детей школьного возраста. Писатель мастерски умел подмечать особенности детской психологии, поэтому его истории остаются актуальными и любимыми уже на протяжении многих десятилетий.</p><h2 id="toc-2" id="toc-2">Краткое содержание рассказчика</h2><p>В центре сюжета находится мальчик, который испытывает непреодолимую страсть к сладостям, особенно к леденцам. История строится вокруг простого детского желания раздобыть заветное лакомое угощение и сопутствующих этому комичных ситуаций. Автор показывает наивность ребенка, его борьбу с искушением и те последствия, к которым приводит чрезмерная тяга к сладкому. Подобные сюжеты помогают юным читателям взглянуть на себя со стороны.</p><h2 id="toc-3" id="toc-3">Главная мысль и мораль</h2><p>Главная мысль рассказа «Леденец» заключается в том, что любое тайное или запретное желание всегда требует ответственности. Автор учит детей честности, умению справляться со своими слабостями и контролировать свои капризы. Произведение наглядно демонстрирует, что за минутное удовольствие иногда приходится расплачиваться чувством стыда или неприятными последствиями.</p><h2 id="toc-4" id="toc-4">Главные герои</h2><ul><li><strong>Главный герой (рассказчик)</strong> — любознательный, искренний и непосредственный мальчик. Он любит сладкое, но еще не всегда умеет совладать со своими желаниями, из-за чего попадает в смешные и поучительные ситуации.</li><li><strong>Мама</strong> — мудрый и терпеливый взрослый, который помогает ребенку понять свои ошибки без излишней строгости, но с воспитательной пользой.</li></ul><h2 id="toc-5" id="toc-5">Черты для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Носов</li><li><strong>Название:</strong> Леденец</li><li><strong>Жанр:</strong> Рассказ</li><li><strong>Главные герои:</strong> Мальчик-сладкоежка, мама</li><li><strong>Чему учит:</strong> Честности перед самим собой, умению сдерживать свои желания и слушать старших.</li></ul><h2 id="toc-6" id="toc-6">Заключение</h2><p>Рассказ Николая Носова «Леденец» читается на одном дыхании благодаря легкому и живому языку автора. Это произведение станет отличным выбором для заполнения читательского дневника в начальной школе, так как оно не только развлекает, но и заставляет задуматься о важных жизненных правилах.</p>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Рассказ Николая Николаевича Носова «Леденец» — это прекрасное, поучительное и очень забавное произведение для детей школьного возраста. Писатель мастерски умел подмечать особенности детской психологии, поэтому его истории остаются актуальными и любимыми уже на протяжении многих десятилетий.</p><h2 id="toc-2" id="toc-2" id="toc-2">Краткое содержание рассказчика</h2><p>В центре сюжета находится мальчик, который испытывает непреодолимую страсть к сладостям, особенно к леденцам. История строится вокруг простого детского желания раздобыть заветное лакомое угощение и сопутствующих этому комичных ситуаций. Автор показывает наивность ребенка, его борьбу с искушением и те последствия, к которым приводит чрезмерная тяга к сладкому. Подобные сюжеты помогают юным читателям взглянуть на себя со стороны.</p><h2 id="toc-3" id="toc-3" id="toc-3">Главная мысль и мораль</h2><p>Главная мысль рассказа «Леденец» заключается в том, что любое тайное или запретное желание всегда требует ответственности. Автор учит детей честности, умению справляться со своими слабостями и контролировать свои капризы. Произведение наглядно демонстрирует, что за минутное удовольствие иногда приходится расплачиваться чувством стыда или неприятными последствиями.</p><h2 id="toc-4" id="toc-4" id="toc-4">Главные герои</h2><ul><li><strong>Главный герой (рассказчик)</strong> — любознательный, искренний и непосредственный мальчик. Он любит сладкое, но еще не всегда умеет совладать со своими желаниями, из-за чего попадает в смешные и поучительные ситуации.</li><li><strong>Мама</strong> — мудрый и терпеливый взрослый, который помогает ребенку понять свои ошибки без излишней строгости, но с воспитательной пользой.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5">Черты для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Носов</li><li><strong>Название:</strong> Леденец</li><li><strong>Жанр:</strong> Рассказ</li><li><strong>Главные герои:</strong> Мальчик-сладкоежка, мама</li><li><strong>Чему учит:</strong> Честности перед самим собой, умению сдерживать свои желания и слушать старших.</li></ul><h2 id="toc-6" id="toc-6" id="toc-6">Заключение</h2><p>Рассказ Николая Носова «Леденец» читается на одном дыхании благодаря легкому и живому языку автора. Это произведение станет отличным выбором для заполнения читательского дневника в начальной школе, так как оно не только развлекает, но и заставляет задуматься о важных жизненных правилах.</p>
+                    
                     
                     
                     </div>
@@ -189,6 +166,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание рассказчика</a></li><li><a href="#toc-3">Главная мысль и мораль</a></li><li><a href="#toc-4">Главные герои</a></li><li><a href="#toc-5">Черты для читательского дневника</a></li><li><a href="#toc-6">Заключение</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -198,7 +200,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

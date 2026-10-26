@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Русская народная сказка «Летучий корабль»: краткое содержание, анализ и читательский дневник — Справочник школьника</title>
+    <title>Русская народная сказка «Летучий корабль»: краткое содержание, анализ и читательский дневник — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения skazka letuchiy korabl chitat onl для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/s/sk/skazka-letuchiy-korabl-chitat-onl.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,43 +144,18 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание сказки</a></li><li><a href="#toc-3">Главная мысль сказки</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Оформление для читательского дневника</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/na/narodnaya-skazka-carevna-nesmeyana.html">Русская народная сказка «Царевна Несмеяна»: анализ, герои и читательский дневник</a></li><li><a href="/articles/n/na/narodnaya-skazka-carevna-lyagushka-ch.html">Русская народная сказка «Царевна-лягушка»: краткое содержание, анализ и главные герои</a></li><li><a href="/articles/n/na/narodnaya-skazka-finist-yasnyy-sokol.html">Русская народная сказка «Финист — Ясный Сокол»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/r/ru/russkaya-narodnaya-skazka-soldatskaya-sh.html">Русская народная сказка «Солдатская шинель»: краткое содержание и анализ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Русская народная сказка «Летучий корабль»: краткое содержание, анализ и читательский дневник</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Введение</h2>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Введение</h2>
 <p>Русская народная сказка «Летучий корабль» — одно из самых известных и любимых произведений устного народного творчества. В ней органично переплелись мотивы волшебства, народный юмор, смекалка и извечная мечта человека о победе добра над злом, справедливости и социальном равенстве. Эта сказка входит в школьную программу по литературе и часто становится объектом для анализа в начальной и средней школе.</p>
 
-<h2 id="toc-2" id="toc-2">Краткое содержание сказки</h2>
+<h2 id="toc-2" id="toc-2" id="toc-2">Краткое содержание сказки</h2>
 <p>Жил-был старик со старухой, и было у них три сына. Старшие два — умные и работящие, а младший, Дурачок (Иван), считался простачком. Царь издает указ: кто построит летучий корабль, за того он выдаст свою дочь замуж.</p>
 <p>Старшие братья по очереди отправляются в лес за удачей, но из-за своей жадности и высокомерия не могут справиться с заданием. Младший брат Иван тоже решает попытать счастья. По пути он делится последним хлебом со старичком-волшебником (в некоторых версиях — с дедом), за что получает совет, как построить летучий корабль.</p>
 <p>Построив корабль, Иван отправляется в путь во дворец. По дороге он подбирает необычных попутчиков:</p>
@@ -193,17 +169,17 @@
 </ul>
 <p>Царь не хочет отдавать царевну за простого крестьянина и придумывает для Ивана сложные и опасные испытания (приготовить баню, съесть неимоверное количество хлеба, выпить море и т.д.). Благодаря помощи своих волшебных друзей Иван с легкостью справляется со всеми задачами царя. В конце концов царь вынужден признать поражение, сыграть свадьбу и отдать дочь за Ивана.</p>
 
-<h2 id="toc-3" id="toc-3">Главная мысль сказки</h2>
+<h2 id="toc-3" id="toc-3" id="toc-3">Главная мысль сказки</h2>
 <p>Главная мысль произведения заключается в том, что истинное богатство человека заключается не в его происхождении, титулах или деньгах, а в его душевной доброте, отзывчивости, бескорыстии и умении дружить. Доброта Ивана к встречному старику и готовность прийти на помощь незнакомцам на дороге возвращаются к нему сторицей.</p>
 
-<h2 id="toc-4" id="toc-4">Характеристика главных героев</h2>
+<h2 id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2>
 <ul>
   <li><strong>Иван (Дурачок):</strong> Главный герой. Добрый, простодушный, открытый и нежадный. В отличие от братьев, он делится последним с нуждающимся и принимает помощь с благодарностью. Его «глупость» на самом деле — это чистота души и отсутствие хитрости.</li>
   <li><strong>Царь:</strong> Олицетворение высокомерия, жадности и несправедливости. Он презирает простых людей и всячески пытается обмануть Ивана, не желая держать свое слово.</li>
   <li><strong>Попутчики Ивана:</strong> Каждый из них обладает уникальным даром. Они символизируют верных друзей, которые приходят на помощь в трудную минуту, ценя бескорыстие главного героя.</li>
 </ul>
 
-<h2 id="toc-5" id="toc-5">Оформление для читательского дневника</h2>
+<h2 id="toc-5" id="toc-5" id="toc-5">Оформление для читательского дневника</h2>
 <p>Если вам задали заполнить читательский дневник по сказке «Летучий корабль», воспользуйтесь следующим кратким планом:</p>
 <ol>
   <li><strong>Название:</strong> «Летучий корабль» (русская народная сказка).</li>
@@ -211,6 +187,7 @@
   <li><strong>Главная мысль:</strong> Доброта, отзывчивость и верные друзья ценятся выше богатства и знатности. За бескорыстие всегда воздается.</li>
   <li><strong>Мое впечатление:</strong> Сказка очень увлекательная и поучительная. Она учит нас тому, что нельзя судить людей по внешности и происхождению, а также тому, как важно уметь дружить и помогать окружающим.</li>
 </ol>
+                    
                     
                     
                     </div>
@@ -223,6 +200,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание сказки</a></li><li><a href="#toc-3">Главная мысль сказки</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Оформление для читательского дневника</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/na/narodnaya-skazka-carevna-nesmeyana.html">Русская народная сказка «Царевна Несмеяна»: анализ, герои и читательский дневник</a></li><li><a href="/articles/n/na/narodnaya-skazka-carevna-lyagushka-ch.html">Русская народная сказка «Царевна-лягушка»: краткое содержание, анализ и главные герои</a></li><li><a href="/articles/n/na/narodnaya-skazka-finist-yasnyy-sokol.html">Русская народная сказка «Финист — Ясный Сокол»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/r/ru/russkaya-narodnaya-skazka-soldatskaya-sh.html">Русская народная сказка «Солдатская шинель»: краткое содержание и анализ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -232,7 +234,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

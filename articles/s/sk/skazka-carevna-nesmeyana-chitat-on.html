@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Русская народная сказка «Царевна Несмеяна»: анализ, главная мысль и читательский дневник — Справочник школьника</title>
+    <title>Русская народная сказка «Царевна Несмеяна»: анализ, главная мысль и читательский дневник — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения skazka carevna nesmeyana chitat on для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/s/sk/skazka-carevna-nesmeyana-chitat-on.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,40 +144,16 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание сказки</a></li><li><a href="#toc-3">Главная мысль произведения</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Для читательского дневника</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/na/narodnaya-skazka-carevna-nesmeyana.html">Русская народная сказка «Царевна Несмеяна»: анализ, герои и читательский дневник</a></li><li><a href="/articles/n/na/narodnaya-skazka-carevna-lyagushka-ch.html">Русская народная сказка «Царевна-лягушка»: краткое содержание, анализ и главные герои</a></li><li><a href="/articles/n/na/narodnaya-skazka-finist-yasnyy-sokol.html">Русская народная сказка «Финист — Ясный Сокол»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/r/ru/russkaya-narodnaya-skazka-soldatskaya-sh.html">Русская народная сказка «Солдатская шинель»: краткое содержание и анализ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Русская народная сказка «Царевна Несмеяна»: анализ, главная мысль и читательский дневник</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Русская народная сказка «Царевна Несмеяна» — одно из самых известных и любимых произведений устного народного творчества. Сюжет о вечно печальной царевне, которую никто не может рассмешить, знаком каждому с детства. Эта сказка учит тому, что искренность, доброта, упорство и оптимизм способны преодолеть любые преграды.</p><h2 id="toc-2" id="toc-2">Краткое содержание сказки</h2><p>Жил-был царь, и была у него дочка — царевна Несмеяна. Она целыми днями сидела у окна и плакала, а от слез её никому не было радости. Царь издал указ: кто сумеет рассмешить его дочь, тот возьмет её в жены и получит полцарства в придану.</p><p>Многие женихи — бояре, купцы и богатые рыцари — пытались развеселить царевну, но все их попытки терпели неудачу. Тем временем по дорогам ходил честный и работящий парень по имени Емеля (или просто бедный работник в некоторых версиях). Работал он на богатого барина, который с ним расплатился за труд мешком зерна или золота. По дороге Емеля случайно упал в реку, потерял часть богатства, но не унывал. Добрый молодец встретил на своем пути старичка, поделился с ним последним хлебом и помог слабым.</p><p>Прибыв во дворец, Емеля попадает в комичные ситуации из-за своей простоты и неуклюжести: он неуместно шутит, падает в грязь, а животные вокруг него ведут себя забавно. Царевна Несмеяна, глядя на его нелепые выходки и искреннюю простоту, впервые в жизни улыбается, а затем начинает громко смеяться. Царь выполняет свое обещание, и Емеля женится на царевне.</p><h2 id="toc-3" id="toc-3">Главная мысль произведения</h2><p>Главная мысль сказки заключается в том, что искренность, простота и оптимизм ценятся выше богатства, знатности и напыщенности. Счастье и радость жизни нельзя купить за деньги или выпросить слезами. Позитивный взгляд на мир и доброе сердце способны растопить самое холодное и печальное сердце.</p><h2 id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Царевна Несмеяна</strong> — избалованная, печальная девушка, которая погружена в уныние и не видит радости в окружающем мире. Ее слезы символизируют капризность и душевную пустоту.</li><li><strong>Емеля (Работник)</strong> — народный любимец, воплощение оптимизма, трудолюбия и смекалки. Он беден, но богат душой, простодушен, добр и открыт миру, благодаря чему и добивается успеха.</li><li><strong>Царь</strong> — любящий отец, отчаявшийся из-за постоянной грусти дочери, готовый на крайние меры, чтобы вернуть ей улыбку.</li></ul><h2 id="toc-5" id="toc-5">Для читательского дневника</h2><ol><li><strong>Автор:</strong> Русский народ</li><li><strong>Жанр:</strong> Волшебная сказка</li><li><strong>Главные герои:</strong> Царевна Несмеяна, Емеля (работник), Царь.</li><li><strong>Чему учит:</strong> Не унывать в трудную минуту, ценить радость, быть искренним и добрым человеком, помогать окружающим.</li><li><strong>Пословица к сказке:</strong> «Уныние — худший грех», «Смех лучшее лекарство», «Не имей сто рублей, а имей сто друзей».</li></ol>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Русская народная сказка «Царевна Несмеяна» — одно из самых известных и любимых произведений устного народного творчества. Сюжет о вечно печальной царевне, которую никто не может рассмешить, знаком каждому с детства. Эта сказка учит тому, что искренность, доброта, упорство и оптимизм способны преодолеть любые преграды.</p><h2 id="toc-2" id="toc-2" id="toc-2">Краткое содержание сказки</h2><p>Жил-был царь, и была у него дочка — царевна Несмеяна. Она целыми днями сидела у окна и плакала, а от слез её никому не было радости. Царь издал указ: кто сумеет рассмешить его дочь, тот возьмет её в жены и получит полцарства в придану.</p><p>Многие женихи — бояре, купцы и богатые рыцари — пытались развеселить царевну, но все их попытки терпели неудачу. Тем временем по дорогам ходил честный и работящий парень по имени Емеля (или просто бедный работник в некоторых версиях). Работал он на богатого барина, который с ним расплатился за труд мешком зерна или золота. По дороге Емеля случайно упал в реку, потерял часть богатства, но не унывал. Добрый молодец встретил на своем пути старичка, поделился с ним последним хлебом и помог слабым.</p><p>Прибыв во дворец, Емеля попадает в комичные ситуации из-за своей простоты и неуклюжести: он неуместно шутит, падает в грязь, а животные вокруг него ведут себя забавно. Царевна Несмеяна, глядя на его нелепые выходки и искреннюю простоту, впервые в жизни улыбается, а затем начинает громко смеяться. Царь выполняет свое обещание, и Емеля женится на царевне.</p><h2 id="toc-3" id="toc-3" id="toc-3">Главная мысль произведения</h2><p>Главная мысль сказки заключается в том, что искренность, простота и оптимизм ценятся выше богатства, знатности и напыщенности. Счастье и радость жизни нельзя купить за деньги или выпросить слезами. Позитивный взгляд на мир и доброе сердце способны растопить самое холодное и печальное сердце.</p><h2 id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Царевна Несмеяна</strong> — избалованная, печальная девушка, которая погружена в уныние и не видит радости в окружающем мире. Ее слезы символизируют капризность и душевную пустоту.</li><li><strong>Емеля (Работник)</strong> — народный любимец, воплощение оптимизма, трудолюбия и смекалки. Он беден, но богат душой, простодушен, добр и открыт миру, благодаря чему и добивается успеха.</li><li><strong>Царь</strong> — любящий отец, отчаявшийся из-за постоянной грусти дочери, готовый на крайние меры, чтобы вернуть ей улыбку.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5">Для читательского дневника</h2><ol><li><strong>Автор:</strong> Русский народ</li><li><strong>Жанр:</strong> Волшебная сказка</li><li><strong>Главные герои:</strong> Царевна Несмеяна, Емеля (работник), Царь.</li><li><strong>Чему учит:</strong> Не унывать в трудную минуту, ценить радость, быть искренним и добрым человеком, помогать окружающим.</li><li><strong>Пословица к сказке:</strong> «Уныние — худший грех», «Смех лучшее лекарство», «Не имей сто рублей, а имей сто друзей».</li></ol>
+                    
                     
                     
                     </div>
@@ -189,6 +166,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание сказки</a></li><li><a href="#toc-3">Главная мысль произведения</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">Для читательского дневника</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/na/narodnaya-skazka-carevna-nesmeyana.html">Русская народная сказка «Царевна Несмеяна»: анализ, герои и читательский дневник</a></li><li><a href="/articles/n/na/narodnaya-skazka-carevna-lyagushka-ch.html">Русская народная сказка «Царевна-лягушка»: краткое содержание, анализ и главные герои</a></li><li><a href="/articles/n/na/narodnaya-skazka-finist-yasnyy-sokol.html">Русская народная сказка «Финист — Ясный Сокол»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/r/ru/russkaya-narodnaya-skazka-soldatskaya-sh.html">Русская народная сказка «Солдатская шинель»: краткое содержание и анализ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -198,7 +200,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

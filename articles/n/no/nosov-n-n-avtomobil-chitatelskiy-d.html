@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Читательский дневник: Николай Носов «Автомобиль» — Справочник школьника</title>
+    <title>Читательский дневник: Николай Носов «Автомобиль» — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения nosov n n avtomobil chitatelskiy d для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-avtomobil-chitatelskiy-d.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,40 +144,16 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание для читательского дневника</a></li><li><a href="#toc-3">Главная мысль рассказа</a></li><li><a href="#toc-4">Главные герои</a></li><li><a href="#toc-5">Чему учит произведение?</a></li><li><a href="#toc-6">План ответа для читательского дневника</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Читательский дневник: Николай Носов «Автомобиль»</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Рассказ Николая Николаевича Носова «Автомобиль» — это классическое произведение детской литературы, которое учит честности, ответственности и критическому мышлению. История о двух мальчиках, решивших похвастаться перед сверстниками, знакома многим поколениям школьников.</p><h2 id="toc-2" id="toc-2">Краткое содержание для читательского дневника</h2><p>Главные герои рассказа — два мальчика, Миша и Коля. Они очень любили рассматривать проезжающие мимо машины и мечтали о том, как сами будут кататься на автомобиле. Однажды мальчики увидели во дворе красивую грузовую машину и решили подойти поближе.</p><p>Один из ребят начал хвастаться перед другими мальчиками во дворе, что он умеет кататься на автомобиле и даже может прокатить остальных. Желая выглядеть взрослым и смелым, он залез в кабину и стал нажимать на все рычаги и педали подряд, хотя совершенно не умел управлять техникой. В результате машина неожиданно сдвинулась с места.</p><p>Испугавшись последствий своего хвастовства, мальчик выпрыгнул из движущегося автомобиля на ходу. К счастью, машина остановилась, врезавшись в забор, и никто серьезно не пострадал. Ребятам пришлось признать свою вину и осознать всю опасность своего поступка.</p><h2 id="toc-3" id="toc-3">Главная мысль рассказа</h2><p>Главная мысль произведения заключается в том, что <strong>хвастовство до добра не доводит</strong>. Нельзя приписывать себе несуществующие заслуги и браться за дела, в которых ничего не понимаешь, особенно если это связано с опасностью для жизни и здоровья — как собственной, так и окружающих. Автор показывает, что тайное всегда становится явным, а за поступки нужно уметь отвечать.</p><h2 id="toc-4" id="toc-4">Главные герои</h2><ul><li><strong>Миша и Коля</strong> — любознательные мальчики, которые любят технику, но поддаются искушению покрасоваться перед сверстниками. Они совершают опрометчивый поступок из-за хвастовства, но в итоге делают правильные выводы из ситуации.</li></ul><h2 id="toc-5" id="toc-5">Чему учит произведение?</h2><ol><li><strong>Ответственности:</strong> прежде чем что-то сделать, нужно подумать о возможных последствиях.</li><li><strong>Честности:</strong> не стоит обманывать друзей ради того, чтобы показаться лучше или круче.</li><li><strong>Осторожности:</strong> техника (особенно автомобили) — это источник повышенной опасности, а не игрушка для баловства.</li></ol><h2 id="toc-6" id="toc-6">План ответа для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Носов</li><li><strong>Название:</strong> «Автомобиль»</li><li><strong>Главные герои:</strong> Миша и Коля</li><li><strong>Краткая суть:</strong> мальчики из хвастовства решили притвориться водителями чужой машины, что привело к опасной ситуации.</li><li><strong>Главная вывод:</strong> хвастовство и ложь до добра не доводят, а отвечать за свои поступки необходимо всегда.</li></ul>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Рассказ Николая Николаевича Носова «Автомобиль» — это классическое произведение детской литературы, которое учит честности, ответственности и критическому мышлению. История о двух мальчиках, решивших похвастаться перед сверстниками, знакома многим поколениям школьников.</p><h2 id="toc-2" id="toc-2" id="toc-2">Краткое содержание для читательского дневника</h2><p>Главные герои рассказа — два мальчика, Миша и Коля. Они очень любили рассматривать проезжающие мимо машины и мечтали о том, как сами будут кататься на автомобиле. Однажды мальчики увидели во дворе красивую грузовую машину и решили подойти поближе.</p><p>Один из ребят начал хвастаться перед другими мальчиками во дворе, что он умеет кататься на автомобиле и даже может прокатить остальных. Желая выглядеть взрослым и смелым, он залез в кабину и стал нажимать на все рычаги и педали подряд, хотя совершенно не умел управлять техникой. В результате машина неожиданно сдвинулась с места.</p><p>Испугавшись последствий своего хвастовства, мальчик выпрыгнул из движущегося автомобиля на ходу. К счастью, машина остановилась, врезавшись в забор, и никто серьезно не пострадал. Ребятам пришлось признать свою вину и осознать всю опасность своего поступка.</p><h2 id="toc-3" id="toc-3" id="toc-3">Главная мысль рассказа</h2><p>Главная мысль произведения заключается в том, что <strong>хвастовство до добра не доводит</strong>. Нельзя приписывать себе несуществующие заслуги и браться за дела, в которых ничего не понимаешь, особенно если это связано с опасностью для жизни и здоровья — как собственной, так и окружающих. Автор показывает, что тайное всегда становится явным, а за поступки нужно уметь отвечать.</p><h2 id="toc-4" id="toc-4" id="toc-4">Главные герои</h2><ul><li><strong>Миша и Коля</strong> — любознательные мальчики, которые любят технику, но поддаются искушению покрасоваться перед сверстниками. Они совершают опрометчивый поступок из-за хвастовства, но в итоге делают правильные выводы из ситуации.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5">Чему учит произведение?</h2><ol><li><strong>Ответственности:</strong> прежде чем что-то сделать, нужно подумать о возможных последствиях.</li><li><strong>Честности:</strong> не стоит обманывать друзей ради того, чтобы показаться лучше или круче.</li><li><strong>Осторожности:</strong> техника (особенно автомобили) — это источник повышенной опасности, а не игрушка для баловства.</li></ol><h2 id="toc-6" id="toc-6" id="toc-6">План ответа для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Носов</li><li><strong>Название:</strong> «Автомобиль»</li><li><strong>Главные герои:</strong> Миша и Коля</li><li><strong>Краткая суть:</strong> мальчики из хвастовства решили притвориться водителями чужой машины, что привело к опасной ситуации.</li><li><strong>Главная вывод:</strong> хвастовство и ложь до добра не доводят, а отвечать за свои поступки необходимо всегда.</li></ul>
+                    
                     
                     
                     </div>
@@ -189,6 +166,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание для читательского дневника</a></li><li><a href="#toc-3">Главная мысль рассказа</a></li><li><a href="#toc-4">Главные герои</a></li><li><a href="#toc-5">Чему учит произведение?</a></li><li><a href="#toc-6">План ответа для читательского дневника</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -198,7 +200,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

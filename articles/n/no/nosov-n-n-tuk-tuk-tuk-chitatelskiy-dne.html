@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Читательский дневник: Николай Носов — «Тук-тук-тук» — Справочник школьника</title>
+    <title>Читательский дневник: Николай Носов — «Тук-тук-тук» — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения nosov n n tuk tuk tuk chitatelskiy dne для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,33 +144,7 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Главные герои</a></li><li><a href="#toc-3">Краткое содержание</a></li><li><a href="#toc-4">Главная мысль</a></li><li><a href="#toc-5">Анализ произведения</a></li><li><a href="#toc-6">План для читательского дневника</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tri-okhotnika-chitatelskiy.html">Читательский дневник: «Три охотника» Николая Носова — краткое содержание и анализ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Читательский дневник: Николай Носов — «Тук-тук-тук»</h1>
@@ -179,26 +154,27 @@
                         
                         
                         
-                <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2>
+                        
+                <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2>
 <p>Рассказ Николая Николаевича Носова «Тук-тук-тук» — это замечательное, поучительное и доброе произведение, которое входит в круг чтения школьников младших классов. Знакомясь с героями этого рассказа, дети учатся преодолевать свои страхи, развивают смекалку и критическое мышление, а также учатся отличать реальность от плодов собственного воображения.</p>
 
-<h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2">Главные герои</h2>
+<h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2">Главные герои</h2>
 <ul>
   <li><strong>Костя</strong> — мальчик с богатым воображением, который вместе с другом остался ночевать на даче.</li>
   <li><strong>Шурик</strong> — друг Кости, компаньон по дачным приключениям, который разделяет страхи товарища, но пытается разобраться в ситуации.</li>
 </ul>
 
-<h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3">Краткое содержание</h2>
+<h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3">Краткое содержание</h2>
 <p>Двое мальчиков, Костя и Шурик, остаются ночевать на даче одни. Стоит темная ночь, в тишине слышны самые разные звуки. Вдруг ребята отчетливо слышат странный стук в дверь: <em>«Тук-тук-тук!»</em>.</p>
 <p>Сначала мальчиков охватывает панический страх. Им кажется, что за дверью прячется кто-то страшный — то ли зверь, то ли злой человек. Они прячутся под одеяло и дрожат от ужаса. Однако любопытство и здравый смысл берут верх над страхом. Вооружившись палкой и фонариком, ребята решают выяснить, кто же издает этот загадочный звук. Оказывается, что источник шума вовсе не опасный монстр, а обычный ежик, который пришел на крыльцо в поисках еды.</p>
 
-<h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4">Главная мысль</h2>
+<h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4">Главная мысль</h2>
 <p>Главная мысль рассказа Носова заключается в известной поговорке: <em>«У страха глаза велики»</em>. Писатель показывает, что неизвестность часто пугает нас гораздо сильнее, чем реальная опасность. Если набраться смелости и посмотреть страху в глаза, то любая страшная загадка окажется простым и безобидным явлением.</p>
 
-<h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5">Анализ произведения</h2>
+<h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5">Анализ произведения</h2>
 <p>Николай Носов мастерски владеет искусством детской психологической прозы. Он не высмеивает испуг мальчиков, а относится к нему с пониманием и легким юмором. Автор показывает психологическое состояние детей: от всепоглощающего ужаса до облегчения и смеха. Рассказ написан простым, живым и понятным языком, что делает его идеальным для самостоятельного чтения и ведения читательского дневника.</p>
 
-<h2 id="toc-6" id="toc-6" id="toc-6" id="toc-6" id="toc-6">План для читательского дневника</h2>
+<h2 id="toc-6" id="toc-6" id="toc-6" id="toc-6" id="toc-6" id="toc-6">План для читательского дневника</h2>
 <ol>
   <li>Автор и название: Николай Носов, «Тук-тук-тук».</li>
   <li>Главные герои: Костя и Шурик.</li>
@@ -208,6 +184,7 @@
   <li>Вывод: страх преувеличивает опасности, смелость помогает найти правду.</li>
 </ol>
             
+                    
                     
                     
                     
@@ -222,6 +199,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Главные герои</a></li><li><a href="#toc-3">Краткое содержание</a></li><li><a href="#toc-4">Главная мысль</a></li><li><a href="#toc-5">Анализ произведения</a></li><li><a href="#toc-6">План для читательского дневника</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tri-okhotnika-chitatelskiy.html">Читательский дневник: «Три охотника» Николая Носова — краткое содержание и анализ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -231,7 +233,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

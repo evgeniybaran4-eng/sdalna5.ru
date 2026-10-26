@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Николай Носов «Замазка» — читательский дневник: сюжет, анализ и главная мысль — Справочник школьника</title>
+    <title>Николай Носов «Замазка» — читательский дневник: сюжет, анализ и главная мысль — Сдал на 5</title>
     <meta name="description" content="Подробный разбор и анализ произведения nosov n n zamazka chitatelskiy dnev для читательского дневника и школьных уроков.">
     <link rel="canonical" href="https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-zamazka-chitatelskiy-dnev.html">
     
@@ -70,23 +70,27 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
+        /* Сетка: контент слева, сайдбар справа */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 300px 1fr; }
+            .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .sidebar { order: 2; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
+
+        .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
         @media (min-width: 992px) {
-            .sidebar { order: 1; }
-            .sidebar-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 1.5rem; max-height: calc(100vh - 100px); overflow-y: auto; }
+            .sidebar-sticky { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
         }
+
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
         .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Поисковая строка и выпадающий список */
+        /* Поисковая строка */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -96,9 +100,6 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
-        
         .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
         .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
@@ -143,63 +144,39 @@
         </nav>
 
         <div class="layout-grid">
-            <aside class="sidebar">
-                <div class="sidebar-sticky">
-                    <!-- Поиск по базе -->
-                    <div class="widget search-widget">
-                        <div class="widget-title">🔍 Поиск произведений</div>
-                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
-                        <div class="search-results" id="liveSearchResults"></div>
-                    </div>
-
-                    <!-- Оглавление -->
-                    <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
-                            <ul><li><a href="#toc-1">Общие сведения о произведении</a></li><li><a href="#toc-2">Краткое содержание для читательского дневника</a></li><li><a href="#toc-3">Главные герои</a></li><li><a href="#toc-4">Главная мысль рассказа</a></li><li><a href="#toc-5">Чему учит произведение</a></li><li><a href="#toc-6">Мой отзыв о рассказе</a></li></ul>
-                        </nav>
-                    </div>
-
-                    <!-- Перелинковка в сайдбаре -->
-                    <div class="widget">
-                        <div class="widget-title">📌 Читайте также</div>
-                        <ul>
-                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
+            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Николай Носов «Замазка» — читательский дневник: сюжет, анализ и главная мысль</h1>
                     <div class="article-content">
                         
                         
-                        <h2 id="toc-1" id="toc-1">Общие сведения о произведении</h2>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1">Общие сведения о произведении</h2>
 <p>Рассказ Николая Николаевича Носова «Замазка» — это классическое произведение детской литературы, написанное в жанре юмористического рассказа. В нем автор с теплотой и юмором описывает забавные ситуации из жизни советских школьников, их наивность, детскую изобретательность и стремление исправить свои ошибки.</p>
 
-<h2 id="toc-2" id="toc-2">Краткое содержание для читательского дневника</h2>
+<h2 id="toc-2" id="toc-2" id="toc-2">Краткое содержание для читательского дневника</h2>
 <p>Главные герои рассказа — школьники Котька и егo друг (в некоторых изданиях выступают другие персонажи, но классический сюжет строится вокруг ремонта в классе). Ребята должны были помочь замазать щели в окнах класса специальной оконной замазкой. Однако материал оказался настолько интересным и необычным на ощупь, что дети не смогли удержаться от того, чтобы не поиграть с ним.</p>
 <p>В процессе лепки они испачкали не только руки, но и одежду, парты, а также друг друга. Пытаясь отмыть и очистить все вокруг, они только усугубляют ситуацию. В конце концов, ребятам приходится признаться в своих проделках, что приводит к комичной, но поучительной развязке.</p>
 
-<h2 id="toc-3" id="toc-3">Главные герои</h2>
+<h2 id="toc-3" id="toc-3" id="toc-3">Главные герои</h2>
 <ul>
   <li><strong>Котька (и его товарищ)</strong> — любознательные, активные и непосредственные школьники. Они искренне хотели помочь с полезным делом, но не справились с искушением поиграть с новым материалом, из-за чего попали в смешную и неловкую ситуацию.</li>
 </ul>
 
-<h2 id="toc-4" id="toc-4">Главная мысль рассказа</h2>
+<h2 id="toc-4" id="toc-4" id="toc-4">Главная мысль рассказа</h2>
 <p>Главная мысль произведения заключается в том, что любое дело требует серьезного подхода. Играть и баловаться нужно во время отдыха, а во время работы нужно быть собранным и ответственным. Кроме того, рассказ учит тому, что за свои поступки и шалости всегда нужно уметь нести ответственность и вовремя признавать свои ошибки.</p>
 
-<h2 id="toc-5" id="toc-5">Чему учит произведение</h2>
+<h2 id="toc-5" id="toc-5" id="toc-5">Чему учит произведение</h2>
 <ul>
   <li>Учит ответственности за порученное дело.</li>
   <li>Показывает, к чему приводит неумение совмещать труд и развлечения.</li>
   <li>Учит честности — лучше сразу признаться в оплошности, чем пытаться ее скрыть и сделать только хуже.</li>
 </ul>
 
-<h2 id="toc-6" id="toc-6">Мой отзыв о рассказе</h2>
+<h2 id="toc-6" id="toc-6" id="toc-6">Мой отзыв о рассказе</h2>
 <p>Рассказ Николая Носова «Замазка» читается очень легко и вызывает улыбку. Автор прекрасно понимает детскую психологию и с юмором описывает знакомые многим ситуации. Это произведение заставляет задуматься о своем поведении и учит тому, как важно оставаться честным в любой ситуации.</p>
+                    
                     
                     
                     </div>
@@ -212,6 +189,31 @@
                     </div>
                 </article>
             </main>
+
+            <!-- Сайдбар справа -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📋 Содержание</div>
+                        <nav>
+                            <ul><li><a href="#toc-1">Общие сведения о произведении</a></li><li><a href="#toc-2">Краткое содержание для читательского дневника</a></li><li><a href="#toc-3">Главные герои</a></li><li><a href="#toc-4">Главная мысль рассказа</a></li><li><a href="#toc-5">Чему учит произведение</a></li><li><a href="#toc-6">Мой отзыв о рассказе</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div class="widget">
+                        <div class="widget-title">📌 Читайте также</div>
+                        <ul>
+                            <li><a href="/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html">Н. Н. Носов «Шурик у дедушки»: читательский дневник, анализ и краткое содержание</a></li><li><a href="/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html">Николай Носов «Федина задача»: краткое содержание, анализ и читательский дневник</a></li><li><a href="/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html">Читательский дневник: Николай Носов «Фантазеры» — краткое содержание, главная мысль и анализ</a></li><li><a href="/articles/n/no/nosov-n-n-tuk-tuk-tuk-chitatelskiy-dne.html">Читательский дневник: Николай Носов — «Тук-тук-тук»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 
@@ -221,7 +223,6 @@
         </div>
     </footer>
 
-    <!-- Скрипт живого поиска -->
     <script>
     (function() {
         var input = document.getElementById('liveSearchInput');

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sdalna5ru.vercel.app/</loc><lastmod>2026-10-26</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sdalna5ru.vercel.app/category/chitatelskiy-dnevnik/</loc><lastmod>2026-10-26</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sdalna5ru.vercel.app/category/kratkoe-soderzhanie/</loc><lastmod>2026-10-26</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sdalna5ru.vercel.app/category/analiz-proizvedeniy/</loc><lastmod>2026-10-26</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sdalna5ru.vercel.app/category/harakteristika-geroev/</loc><lastmod>2026-10-26</lastmod><priority>0.9</priority></url>
   <url><loc>https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-shurik-u-dedushki-chitatelski.html</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://sdalna5ru.vercel.app/articles/n/no/nosov-nikolay-fedina-zadacha-chitat.html</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://sdalna5ru.vercel.app/articles/n/no/nosov-n-fantazery-chitatelskiy-dnev.html</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority></url>
