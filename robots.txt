@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sdalna5.ru.vercel.app/sitemap.xml
