@@ -13,12 +13,10 @@
     <meta property="og:description" content="Подробный разбор и анализ произведения skazka carevna lyagushka chitat onl для читательского дневника и школьных уроков.">
     <meta property="og:url" content="https://sdalna5ru.vercel.app/articles/s/sk/skazka-carevna-lyagushka-chitat-onl.html">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Микроразметка Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,30 +56,25 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Шапка и меню категорий */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
         .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
         .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
         .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
 
-        /* Контейнер */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-        /* Хлебные крошки */
         .breadcrumbs { padding: 1rem 0; font-size: 0.875rem; color: var(--text-muted); }
         .breadcrumbs a { color: var(--text-muted); }
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* 2-колоночная сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 280px 1fr; }
+            .layout-grid { grid-template-columns: 300px 1fr; }
         }
 
-        /* Сайдбар */
         .sidebar { order: 2; }
         @media (min-width: 992px) {
             .sidebar { order: 1; }
@@ -93,7 +86,16 @@
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Основной контент статьи */
+        /* Поисковая строка и выпадающий список */
+        .search-widget { position: relative; }
+        .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
+        .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+        .search-results { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); max-height: 280px; overflow-y: auto; z-index: 100; display: none; }
+        .search-item { display: block; padding: 0.65rem 0.9rem; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; color: #1e293b; text-decoration: none; }
+        .search-item:last-child { border-bottom: none; }
+        .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
+        .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
+
         .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
         @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
         
@@ -108,7 +110,6 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
-        /* Блок похожих статей внизу */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
@@ -120,10 +121,9 @@
     </style>
 </head>
 <body>
-    <!-- Шапка с категориями -->
     <header>
         <div class="container header-inner">
-            <a href="/" class="logo">📚 Справочник школьника</a>
+            <a href="/" class="logo">📚 Сдал на 5</a>
             <nav class="nav-categories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
@@ -134,7 +134,6 @@
     </header>
 
     <div class="container">
-        <!-- Хлебные крошки -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a href="/">Главная</a>
             <span>/</span>
@@ -143,11 +142,16 @@
             <span class="current">Русская народная сказка «Царевна-лягушка»: читаем онлайн, анализируем и готовимся к уроку</span>
         </nav>
 
-        <!-- Основная сетка -->
         <div class="layout-grid">
-            <!-- Сайдбар -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
+                    <!-- Поиск по базе -->
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
                     <!-- Оглавление -->
                     <div class="widget">
                         <div class="widget-title">📋 Содержание</div>
@@ -166,17 +170,17 @@
                 </div>
             </aside>
 
-            <!-- Тело статьи -->
             <main class="main-article">
                 <article>
                     <h1>Русская народная сказка «Царевна-лягушка»: читаем онлайн, анализируем и готовимся к уроку</h1>
                     <div class="article-content">
                         
-                        <h2 id="toc-1">Введение</h2><p>Русская народная сказка «Царевна-лягушка» — одно из самых известных и любимых произведений устного народного творчества. Сюжет о заколдованной невесте, испытаниях и победе добра над злом знаком каждому с детства. В этой статье мы подробно разберем сказку, выделим ее главную мысль, дадим характеристику персонажей и составим удобный план для читательского дневника.</p><h2 id="toc-2">Краткое содержание сказки</h2><p>У царя было три сына. Пришло время им жениться, и отец велел сыновьям пустить стрелы в разные стороны: куда стрела упадет, там и судьба их искать. Старший сын попал на боярский двор, средний — к богатому купцу, а младший, Иван-царевич, нашел свою стрелу на болотной кочке в лапах у лягушки.</p><p>Царь устроил для невесток три испытания: соткать ковер, испечь хлеб и явиться на пир. Лягушка с помощью волшебства блестяще справилась со всеми заданиями, а на пиру явила себя в образе прекрасной царевны Василисы Премудрой.</p><p>Иван-царевич поспешил домой и сжег лягушечью кожу, думая, что избавит жену от заклятия. Но этим он нарушил запрет: Василиса исчезла. Герою пришлось отправиться в далекий путь на ее поиски, пройти через множество испытаний, победить Кощея Бессмертного и спасти любимую.</p><h2 id="toc-3">Главная мысль и смысл произведения</h2><p>Главная мысль сказки «Царевна-лягушка» заключается в том, что истинная красота, мудрость и доброта часто скрыты за скромной или неприглядной внешней оболочкой. Внутренние качества человека всегда важнее внешности.</p><ul><li><strong>Сила верности и любви:</strong> Иван-царевич ради спасения жены готов пройти любые испытания.</li><li><strong>Преодоление трудностей:</strong> Помощь сказочных животных доказывает, что доброта к окружающему миру всегда возвращается сторицей.</li><li><strong>Важность послушания и терпения:</strong> Ошибка Ивана-царевича (сжигание кожи) учит тому, что нельзя нарушать договоренности и спешить с выводами.</li></ul><h2 id="toc-4">Характеристика главных героев</h2><ul><li><strong>Иван-царевич:</strong> Младший царский сын. Добрый, смелый, решительный, готовый исправить свою ошибку и пойти на край света ради любимой.</li><li><strong>Василиса Премудрая (Царевна-лягушка):</strong> Умная, искусная мастерица, добрая и верная жена. Обладает волшебной силой, но покорно несет свое проклятие до срока.</li><li><strong>Царь-отец:</strong> Мудрый правитель, который дает сыновьям сложные, но справедливые поручения для проверки их будущих жен.</li><li><strong>Помощники (медведь, селезень, заяц, щука):</strong> Благодарные животные, которых Иван-царевич пощадил на охоте и которые помогли ему победить Кощея.</li></ul><h2 id="toc-5">План для читательского дневника</h2><ol><li><strong>Название:</strong> «Царевна-лягушка» (русская народная сказка).</li><li><strong>Главные герои:</strong> Иван-царевич, Василиса Премудрая, царь, животные-помощники.</li><li><strong>Краткий сюжет:</strong> Стрельба из лука, выбор невест, испытания от царя, сожжение кожи лягушки, поиски Василисы и победа над Кощеем.</li><li><strong>Главная мысль:</strong> Внутренние достоинства человека важнее его внешней оболочки; любовь и преданность преодолевают любые преграды.</li><li><strong>Мое впечатление:</strong> Сказка учит верить в чудо, быть добрым к животным и людям, а также ценить и беречь тех, кого любишь.</li></ol><h2 id="toc-6">Заключение</h2><p>Чтение сказки «Царевна-лягушка» развивает воображение, учит отличать добро от зла и показывает ценность взаимовыручки. Произведение актуально во все времена и остается жемчужиной русской культуры.</p>
+                        
+                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Русская народная сказка «Царевна-лягушка» — одно из самых известных и любимых произведений устного народного творчества. Сюжет о заколдованной невесте, испытаниях и победе добра над злом знаком каждому с детства. В этой статье мы подробно разберем сказку, выделим ее главную мысль, дадим характеристику персонажей и составим удобный план для читательского дневника.</p><h2 id="toc-2" id="toc-2">Краткое содержание сказки</h2><p>У царя было три сына. Пришло время им жениться, и отец велел сыновьям пустить стрелы в разные стороны: куда стрела упадет, там и судьба их искать. Старший сын попал на боярский двор, средний — к богатому купцу, а младший, Иван-царевич, нашел свою стрелу на болотной кочке в лапах у лягушки.</p><p>Царь устроил для невесток три испытания: соткать ковер, испечь хлеб и явиться на пир. Лягушка с помощью волшебства блестяще справилась со всеми заданиями, а на пиру явила себя в образе прекрасной царевны Василисы Премудрой.</p><p>Иван-царевич поспешил домой и сжег лягушечью кожу, думая, что избавит жену от заклятия. Но этим он нарушил запрет: Василиса исчезла. Герою пришлось отправиться в далекий путь на ее поиски, пройти через множество испытаний, победить Кощея Бессмертного и спасти любимую.</p><h2 id="toc-3" id="toc-3">Главная мысль и смысл произведения</h2><p>Главная мысль сказки «Царевна-лягушка» заключается в том, что истинная красота, мудрость и доброта часто скрыты за скромной или неприглядной внешней оболочкой. Внутренние качества человека всегда важнее внешности.</p><ul><li><strong>Сила верности и любви:</strong> Иван-царевич ради спасения жены готов пройти любые испытания.</li><li><strong>Преодоление трудностей:</strong> Помощь сказочных животных доказывает, что доброта к окружающему миру всегда возвращается сторицей.</li><li><strong>Важность послушания и терпения:</strong> Ошибка Ивана-царевича (сжигание кожи) учит тому, что нельзя нарушать договоренности и спешить с выводами.</li></ul><h2 id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Иван-царевич:</strong> Младший царский сын. Добрый, смелый, решительный, готовый исправить свою ошибку и пойти на край света ради любимой.</li><li><strong>Василиса Премудрая (Царевна-лягушка):</strong> Умная, искусная мастерица, добрая и верная жена. Обладает волшебной силой, но покорно несет свое проклятие до срока.</li><li><strong>Царь-отец:</strong> Мудрый правитель, который дает сыновьям сложные, но справедливые поручения для проверки их будущих жен.</li><li><strong>Помощники (медведь, селезень, заяц, щука):</strong> Благодарные животные, которых Иван-царевич пощадил на охоте и которые помогли ему победить Кощея.</li></ul><h2 id="toc-5" id="toc-5">План для читательского дневника</h2><ol><li><strong>Название:</strong> «Царевна-лягушка» (русская народная сказка).</li><li><strong>Главные герои:</strong> Иван-царевич, Василиса Премудрая, царь, животные-помощники.</li><li><strong>Краткий сюжет:</strong> Стрельба из лука, выбор невест, испытания от царя, сожжение кожи лягушки, поиски Василисы и победа над Кощеем.</li><li><strong>Главная мысль:</strong> Внутренние достоинства человека важнее его внешней оболочки; любовь и преданность преодолевают любые преграды.</li><li><strong>Мое впечатление:</strong> Сказка учит верить в чудо, быть добрым к животным и людям, а также ценить и беречь тех, кого любишь.</li></ol><h2 id="toc-6" id="toc-6">Заключение</h2><p>Чтение сказки «Царевна-лягушка» развивает воображение, учит отличать добро от зла и показывает ценность взаимовыручки. Произведение актуально во все времена и остается жемчужиной русской культуры.</p>
+                    
                     
                     </div>
 
-                    <!-- Рекомендуемые статьи внизу (подвал статьи) -->
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
@@ -190,8 +194,69 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Справочник школьника — образовательные материалы и читательские дневники</p>
+            <p>© 2026 Сдал на 5 — образовательный справочник школьника</p>
         </div>
     </footer>
+
+    <!-- Скрипт живого поиска -->
+    <script>
+    (function() {
+        var input = document.getElementById('liveSearchInput');
+        var results = document.getElementById('liveSearchResults');
+        var searchIndex = null;
+
+        if (!input || !results) return;
+
+        function loadIndex() {
+            if (searchIndex !== null) return;
+            fetch('/search.json')
+                .then(function(res) { return res.json(); })
+                .then(function(data) { searchIndex = data; })
+                .catch(function(e) { console.error('Ошибка загрузки поиска:', e); });
+        }
+
+        input.addEventListener('focus', loadIndex);
+
+        input.addEventListener('input', function() {
+            var q = this.value.trim().toLowerCase();
+            if (q.length < 2) {
+                results.style.display = 'none';
+                results.innerHTML = '';
+                return;
+            }
+
+            if (!searchIndex) {
+                loadIndex();
+                return;
+            }
+
+            var matches = searchIndex.filter(function(item) {
+                return item.title.toLowerCase().indexOf(q) !== -1;
+            }).slice(0, 7);
+
+            if (matches.length === 0) {
+                results.innerHTML = '<div style="padding: 0.75rem; font-size: 0.85rem; color: #94a3b8; text-align: center;">Ничего не найдено</div>';
+                results.style.display = 'block';
+                return;
+            }
+
+            var html = matches.map(function(item) {
+                return '<a href="' + item.url + '" class="search-item">' +
+                       '<strong>' + item.title + '</strong>' +
+                       '<span class="search-item-meta">' + item.category + '</span>' +
+                       '</a>';
+            }).join('');
+
+            results.innerHTML = html;
+            results.style.display = 'block';
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!input.contains(e.target) && !results.contains(e.target)) {
+                results.style.display = 'none';
+            }
+        });
+    })();
+    </script>
 </body>
 </html>

@@ -13,12 +13,10 @@
     <meta property="og:description" content="Подробный разбор и анализ произведения nosov n n nakhodchivost chitatelski для читательского дневника и школьных уроков.">
     <meta property="og:url" content="https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-nakhodchivost-chitatelski.html">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Микроразметка Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,30 +56,25 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Шапка и меню категорий */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
         .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
         .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
         .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
 
-        /* Контейнер */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-        /* Хлебные крошки */
         .breadcrumbs { padding: 1rem 0; font-size: 0.875rem; color: var(--text-muted); }
         .breadcrumbs a { color: var(--text-muted); }
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* 2-колоночная сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 280px 1fr; }
+            .layout-grid { grid-template-columns: 300px 1fr; }
         }
 
-        /* Сайдбар */
         .sidebar { order: 2; }
         @media (min-width: 992px) {
             .sidebar { order: 1; }
@@ -93,7 +86,16 @@
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Основной контент статьи */
+        /* Поисковая строка и выпадающий список */
+        .search-widget { position: relative; }
+        .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
+        .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+        .search-results { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); max-height: 280px; overflow-y: auto; z-index: 100; display: none; }
+        .search-item { display: block; padding: 0.65rem 0.9rem; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; color: #1e293b; text-decoration: none; }
+        .search-item:last-child { border-bottom: none; }
+        .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
+        .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
+
         .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
         @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
         
@@ -108,7 +110,6 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
-        /* Блок похожих статей внизу */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
@@ -120,10 +121,9 @@
     </style>
 </head>
 <body>
-    <!-- Шапка с категориями -->
     <header>
         <div class="container header-inner">
-            <a href="/" class="logo">📚 Справочник школьника</a>
+            <a href="/" class="logo">📚 Сдал на 5</a>
             <nav class="nav-categories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
@@ -134,7 +134,6 @@
     </header>
 
     <div class="container">
-        <!-- Хлебные крошки -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a href="/">Главная</a>
             <span>/</span>
@@ -143,11 +142,16 @@
             <span class="current">Читательский дневник: «Находчивость» Николая Носова — анализ и главная мысль</span>
         </nav>
 
-        <!-- Основная сетка -->
         <div class="layout-grid">
-            <!-- Сайдбар -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
+                    <!-- Поиск по базе -->
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
                     <!-- Оглавление -->
                     <div class="widget">
                         <div class="widget-title">📋 Содержание</div>
@@ -166,20 +170,20 @@
                 </div>
             </aside>
 
-            <!-- Тело статьи -->
             <main class="main-article">
                 <article>
                     <h1>Читательский дневник: «Находчивость» Николая Носова — анализ и главная мысль</h1>
                     <div class="article-content">
                         
-                        <h2 id="toc-1">Введение</h2>
+                        
+                        <h2 id="toc-1" id="toc-1">Введение</h2>
 <p>Рассказ Николая Николаевича Носова «Находчивость» — это прекрасное, поучительное и невероятно забавное произведение из золотого фонда детской литературы. Писатель обладал удивительным талантом видеть мир глазами ребенка и с юмором описывать ситуации, в которые попадают школьники. В этой статье мы подробно разберем сюжет рассказа, характеры главных героев и подготовим отличную запись для читательского дневника.</p>
 
-<h2 id="toc-2">Краткое содержание рассказа</h2>
+<h2 id="toc-2" id="toc-2">Краткое содержание рассказа</h2>
 <p>Сюжет произведения строится вокруг двух неразлучных друзей-школьников, которые постоянно придумывают себе интересные занятия. В этот раз мальчики увлеклись чтением приключенческих книг и решили проверить свою смекалку на практике.</p>
 <p>Они начинают моделировать различные сложные ситуации, требующие быстрого принятия решений, проявляя при этом завидную фантазию. Рассказ полон комичных моментов, когда детская логика сталкивается с суровой реальностью, однако именно благодаря своей сообразительности ребята находят выход из любых придуманных ими же затруднений.</p>
 
-<h2 id="toc-3">Главная мысль и мораль произведения</h2>
+<h2 id="toc-3" id="toc-3">Главная мысль и мораль произведения</h2>
 <p>Главная мысль рассказа Н. Н. Носова «Находчивость» заключается в том, что в любой, даже самой сложной или неожиданной ситуации не стоит паниковать. Важно сохранять спокойствие, мыслить нестандартно и полагаться на собственную сообразительность.</p>
 <p>Писатель учит юных читателей:</p>
 <ul>
@@ -189,13 +193,13 @@
   <li>Ценить настоящую дружбу и взаимовыручку.</li>
 </ul>
 
-<h2 id="toc-4">Характеристика главных героев</h2>
+<h2 id="toc-4" id="toc-4">Характеристика главных героев</h2>
 <p>Герои Носова — это обыкновенные советские школьники, очень живые, любознательные и непоседливые.</p>
 <ul>
   <li><strong>Мальчики-друзья:</strong> Автором не всегда подчеркиваются их индивидуальные черты, так как они выступают единой командой. Они оба обладают активным воображением, любят приключения и стремятся во всем дойти до сути. Их главное оружие — это юмор и оптимизм.</li>
 </ul>
 
-<h2 id="toc-5">Материал для читательского дневника</h2>
+<h2 id="toc-5" id="toc-5">Материал для читательского дневника</h2>
 <p>Если вам нужно заполнить читательский дневник по этому произведению, вы можете использовать следующий готовый шаблон:</p>
 <ol>
   <li><strong>Автор:</strong> Николай Николаевич Носов.</li>
@@ -206,12 +210,12 @@
   <li><strong>Мой отзыв:</strong> Рассказ очень понравился, потому что он смешной и поучительный. Он учит никогда не сдаваться и находить выход из любого положения.</li>
 </ol>
 
-<h2 id="toc-6">Заключение</h2>
+<h2 id="toc-6" id="toc-6">Заключение</h2>
 <p>Произведения Николая Носова не теряют своей актуальности и сегодня. Рассказ «Находчивость» читается на одном дыхании и оставляет после себя самые приятные впечатления. Он вдохновляет детей на творческий подход к жизни и напоминает взрослым о важности детской непосредственности.</p>
+                    
                     
                     </div>
 
-                    <!-- Рекомендуемые статьи внизу (подвал статьи) -->
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
@@ -225,8 +229,69 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Справочник школьника — образовательные материалы и читательские дневники</p>
+            <p>© 2026 Сдал на 5 — образовательный справочник школьника</p>
         </div>
     </footer>
+
+    <!-- Скрипт живого поиска -->
+    <script>
+    (function() {
+        var input = document.getElementById('liveSearchInput');
+        var results = document.getElementById('liveSearchResults');
+        var searchIndex = null;
+
+        if (!input || !results) return;
+
+        function loadIndex() {
+            if (searchIndex !== null) return;
+            fetch('/search.json')
+                .then(function(res) { return res.json(); })
+                .then(function(data) { searchIndex = data; })
+                .catch(function(e) { console.error('Ошибка загрузки поиска:', e); });
+        }
+
+        input.addEventListener('focus', loadIndex);
+
+        input.addEventListener('input', function() {
+            var q = this.value.trim().toLowerCase();
+            if (q.length < 2) {
+                results.style.display = 'none';
+                results.innerHTML = '';
+                return;
+            }
+
+            if (!searchIndex) {
+                loadIndex();
+                return;
+            }
+
+            var matches = searchIndex.filter(function(item) {
+                return item.title.toLowerCase().indexOf(q) !== -1;
+            }).slice(0, 7);
+
+            if (matches.length === 0) {
+                results.innerHTML = '<div style="padding: 0.75rem; font-size: 0.85rem; color: #94a3b8; text-align: center;">Ничего не найдено</div>';
+                results.style.display = 'block';
+                return;
+            }
+
+            var html = matches.map(function(item) {
+                return '<a href="' + item.url + '" class="search-item">' +
+                       '<strong>' + item.title + '</strong>' +
+                       '<span class="search-item-meta">' + item.category + '</span>' +
+                       '</a>';
+            }).join('');
+
+            results.innerHTML = html;
+            results.style.display = 'block';
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!input.contains(e.target) && !results.contains(e.target)) {
+                results.style.display = 'none';
+            }
+        });
+    })();
+    </script>
 </body>
 </html>

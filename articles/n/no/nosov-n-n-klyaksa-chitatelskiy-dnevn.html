@@ -13,12 +13,10 @@
     <meta property="og:description" content="Подробный разбор и анализ произведения nosov n n klyaksa chitatelskiy dnevn для читательского дневника и школьных уроков.">
     <meta property="og:url" content="https://sdalna5ru.vercel.app/articles/n/no/nosov-n-n-klyaksa-chitatelskiy-dnevn.html">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Микроразметка Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,30 +56,25 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Шапка и меню категорий */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
         .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
         .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
         .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
 
-        /* Контейнер */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-        /* Хлебные крошки */
         .breadcrumbs { padding: 1rem 0; font-size: 0.875rem; color: var(--text-muted); }
         .breadcrumbs a { color: var(--text-muted); }
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* 2-колоночная сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 280px 1fr; }
+            .layout-grid { grid-template-columns: 300px 1fr; }
         }
 
-        /* Сайдбар */
         .sidebar { order: 2; }
         @media (min-width: 992px) {
             .sidebar { order: 1; }
@@ -93,7 +86,16 @@
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Основной контент статьи */
+        /* Поисковая строка и выпадающий список */
+        .search-widget { position: relative; }
+        .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
+        .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+        .search-results { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); max-height: 280px; overflow-y: auto; z-index: 100; display: none; }
+        .search-item { display: block; padding: 0.65rem 0.9rem; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; color: #1e293b; text-decoration: none; }
+        .search-item:last-child { border-bottom: none; }
+        .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
+        .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
+
         .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
         @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
         
@@ -108,7 +110,6 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
-        /* Блок похожих статей внизу */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
@@ -120,10 +121,9 @@
     </style>
 </head>
 <body>
-    <!-- Шапка с категориями -->
     <header>
         <div class="container header-inner">
-            <a href="/" class="logo">📚 Справочник школьника</a>
+            <a href="/" class="logo">📚 Сдал на 5</a>
             <nav class="nav-categories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
@@ -134,7 +134,6 @@
     </header>
 
     <div class="container">
-        <!-- Хлебные крошки -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a href="/">Главная</a>
             <span>/</span>
@@ -143,11 +142,16 @@
             <span class="current">Читательский дневник: «Клякса» Н. Н. Носова — анализ, сюжет и главная мысль</span>
         </nav>
 
-        <!-- Основная сетка -->
         <div class="layout-grid">
-            <!-- Сайдбар -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
+                    <!-- Поиск по базе -->
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
                     <!-- Оглавление -->
                     <div class="widget">
                         <div class="widget-title">📋 Содержание</div>
@@ -166,17 +170,17 @@
                 </div>
             </aside>
 
-            <!-- Тело статьи -->
             <main class="main-article">
                 <article>
                     <h1>Читательский дневник: «Клякса» Н. Н. Носова — анализ, сюжет и главная мысль</h1>
                     <div class="article-content">
                         
-                        <h2 id="toc-1">Введение</h2><p>Рассказы Николая Николаевича Носова любимы многими поколениями школьников. Его произведения учат честности, трудолюбию и ответственности, причем делают это просто и с юмором. Рассказ <b>«Клякса»</b> — прекрасный пример того, как обычная детская шалость или неаккуратность может стать поводом для серьезной работы над собой.</p><h2 id="toc-2">Паспорт произведения для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Николаевич Носов</li><li><strong>Название:</strong> Клякса</li><li><strong>Жанр:</strong> Рассказ</li><li><strong>Год написания:</strong> 1950-е гг.</li></ul><h2 id="toc-3">Краткое содержание</h2><p>Главный герой рассказа — школьник по имени Федя Рыбкин. Он учится в школе и, как многие мальчишки, не всегда аккуратно обращается с письменными принадлежностями. Однажды в его тетради по чистописанию появляется огромная и некрасивая клякса. Чтобы тетрадь выглядела чистой, Федя пытается ее исправить, но делает только хуже: размазывает чернила, пачкает пальцы, парту и учебники.</p><p>Вместо того чтобы аккуратно переделать страницу или попросить совета, Федя решает замазать кляксу красками, сделать рисунок или вовсе вырвать лист. Однако обман раскрывается. Учительница и одноклассники помогают Феде понять, что аккуратность — это проявление уважения к своему труду и труду окружающих. В конце концов мальчик осознает свою ошибку и учится делать всё на совесть.</p><h2 id="toc-4">Главная мысль и мораль</h2><p>Главная мысль рассказа Н. Н. Носова «Клякса» заключается в том, что <em>любую проблему нужно решать честно и правильно, а не пытаться скрыть ее с помощью обмана или небрежности</em>. Писатель показывает, что неряшливость и попытки замести следы своих ошибок только усугубляют ситуацию. Произведение учит школьников аккуратности, ответственности и тому, что труд требует внимания и старания.</p><h2 id="toc-5">Характеристика главных героев</h2><ul><li><strong>Федя Рыбкин</strong> — обычный школьник, веселый и старательный, но иногда ленивый и неаккуратный. Он совершает ошибки, но умеет их признавать и делать правильные выводы.</li><li><strong>Учительница</strong> — мудрый и терпеливый педагог, который не просто ругает ученика за грязь в тетради, а помогает ему осознать ценность аккуратности.</li></ul><h2 id="toc-6">Чему учит рассказ?</h2><ol><li>Быть внимательным и аккуратным при выполнении любой работы.</li><li>Не бояться признавать свои ошибки и исправлять их честным путем.</li><li>Понимать, что тайное всегда становится явным, поэтому лучше сразу делать всё на совесть.</li></ol><h2 id="toc-7">Отзыв для читательского дневника</h2><p>Мне очень понравился рассказ «Клякса». Он написан легким и понятным языком, в нем много юмора. История Феди Рыбкина заставила меня задуматься о том, как важно содержать свои школьные тетради и учебники в порядке. Рекомендую прочитать это произведение всем ученикам младших классов!</p>
+                        
+                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Рассказы Николая Николаевича Носова любимы многими поколениями школьников. Его произведения учат честности, трудолюбию и ответственности, причем делают это просто и с юмором. Рассказ <b>«Клякса»</b> — прекрасный пример того, как обычная детская шалость или неаккуратность может стать поводом для серьезной работы над собой.</p><h2 id="toc-2" id="toc-2">Паспорт произведения для читательского дневника</h2><ul><li><strong>Автор:</strong> Николай Николаевич Носов</li><li><strong>Название:</strong> Клякса</li><li><strong>Жанр:</strong> Рассказ</li><li><strong>Год написания:</strong> 1950-е гг.</li></ul><h2 id="toc-3" id="toc-3">Краткое содержание</h2><p>Главный герой рассказа — школьник по имени Федя Рыбкин. Он учится в школе и, как многие мальчишки, не всегда аккуратно обращается с письменными принадлежностями. Однажды в его тетради по чистописанию появляется огромная и некрасивая клякса. Чтобы тетрадь выглядела чистой, Федя пытается ее исправить, но делает только хуже: размазывает чернила, пачкает пальцы, парту и учебники.</p><p>Вместо того чтобы аккуратно переделать страницу или попросить совета, Федя решает замазать кляксу красками, сделать рисунок или вовсе вырвать лист. Однако обман раскрывается. Учительница и одноклассники помогают Феде понять, что аккуратность — это проявление уважения к своему труду и труду окружающих. В конце концов мальчик осознает свою ошибку и учится делать всё на совесть.</p><h2 id="toc-4" id="toc-4">Главная мысль и мораль</h2><p>Главная мысль рассказа Н. Н. Носова «Клякса» заключается в том, что <em>любую проблему нужно решать честно и правильно, а не пытаться скрыть ее с помощью обмана или небрежности</em>. Писатель показывает, что неряшливость и попытки замести следы своих ошибок только усугубляют ситуацию. Произведение учит школьников аккуратности, ответственности и тому, что труд требует внимания и старания.</p><h2 id="toc-5" id="toc-5">Характеристика главных героев</h2><ul><li><strong>Федя Рыбкин</strong> — обычный школьник, веселый и старательный, но иногда ленивый и неаккуратный. Он совершает ошибки, но умеет их признавать и делать правильные выводы.</li><li><strong>Учительница</strong> — мудрый и терпеливый педагог, который не просто ругает ученика за грязь в тетради, а помогает ему осознать ценность аккуратности.</li></ul><h2 id="toc-6" id="toc-6">Чему учит рассказ?</h2><ol><li>Быть внимательным и аккуратным при выполнении любой работы.</li><li>Не бояться признавать свои ошибки и исправлять их честным путем.</li><li>Понимать, что тайное всегда становится явным, поэтому лучше сразу делать всё на совесть.</li></ol><h2 id="toc-7" id="toc-7">Отзыв для читательского дневника</h2><p>Мне очень понравился рассказ «Клякса». Он написан легким и понятным языком, в нем много юмора. История Феди Рыбкина заставила меня задуматься о том, как важно содержать свои школьные тетради и учебники в порядке. Рекомендую прочитать это произведение всем ученикам младших классов!</p>
+                    
                     
                     </div>
 
-                    <!-- Рекомендуемые статьи внизу (подвал статьи) -->
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
@@ -190,8 +194,69 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Справочник школьника — образовательные материалы и читательские дневники</p>
+            <p>© 2026 Сдал на 5 — образовательный справочник школьника</p>
         </div>
     </footer>
+
+    <!-- Скрипт живого поиска -->
+    <script>
+    (function() {
+        var input = document.getElementById('liveSearchInput');
+        var results = document.getElementById('liveSearchResults');
+        var searchIndex = null;
+
+        if (!input || !results) return;
+
+        function loadIndex() {
+            if (searchIndex !== null) return;
+            fetch('/search.json')
+                .then(function(res) { return res.json(); })
+                .then(function(data) { searchIndex = data; })
+                .catch(function(e) { console.error('Ошибка загрузки поиска:', e); });
+        }
+
+        input.addEventListener('focus', loadIndex);
+
+        input.addEventListener('input', function() {
+            var q = this.value.trim().toLowerCase();
+            if (q.length < 2) {
+                results.style.display = 'none';
+                results.innerHTML = '';
+                return;
+            }
+
+            if (!searchIndex) {
+                loadIndex();
+                return;
+            }
+
+            var matches = searchIndex.filter(function(item) {
+                return item.title.toLowerCase().indexOf(q) !== -1;
+            }).slice(0, 7);
+
+            if (matches.length === 0) {
+                results.innerHTML = '<div style="padding: 0.75rem; font-size: 0.85rem; color: #94a3b8; text-align: center;">Ничего не найдено</div>';
+                results.style.display = 'block';
+                return;
+            }
+
+            var html = matches.map(function(item) {
+                return '<a href="' + item.url + '" class="search-item">' +
+                       '<strong>' + item.title + '</strong>' +
+                       '<span class="search-item-meta">' + item.category + '</span>' +
+                       '</a>';
+            }).join('');
+
+            results.innerHTML = html;
+            results.style.display = 'block';
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!input.contains(e.target) && !results.contains(e.target)) {
+                results.style.display = 'none';
+            }
+        });
+    })();
+    </script>
 </body>
 </html>

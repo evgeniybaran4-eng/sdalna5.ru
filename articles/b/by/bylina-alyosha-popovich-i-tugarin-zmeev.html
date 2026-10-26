@@ -13,12 +13,10 @@
     <meta property="og:description" content="Подробный разбор и анализ произведения bylina alyosha popovich i tugarin zmeev для читательского дневника и школьных уроков.">
     <meta property="og:url" content="https://sdalna5ru.vercel.app/articles/b/by/bylina-alyosha-popovich-i-tugarin-zmeev.html">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Микроразметка Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,30 +56,25 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Шапка и меню категорий */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
         .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
         .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
         .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
 
-        /* Контейнер */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-        /* Хлебные крошки */
         .breadcrumbs { padding: 1rem 0; font-size: 0.875rem; color: var(--text-muted); }
         .breadcrumbs a { color: var(--text-muted); }
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* 2-колоночная сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
-            .layout-grid { grid-template-columns: 280px 1fr; }
+            .layout-grid { grid-template-columns: 300px 1fr; }
         }
 
-        /* Сайдбар */
         .sidebar { order: 2; }
         @media (min-width: 992px) {
             .sidebar { order: 1; }
@@ -93,7 +86,16 @@
         .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
         .widget li a:hover { color: var(--primary); }
 
-        /* Основной контент статьи */
+        /* Поисковая строка и выпадающий список */
+        .search-widget { position: relative; }
+        .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
+        .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+        .search-results { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); max-height: 280px; overflow-y: auto; z-index: 100; display: none; }
+        .search-item { display: block; padding: 0.65rem 0.9rem; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; color: #1e293b; text-decoration: none; }
+        .search-item:last-child { border-bottom: none; }
+        .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
+        .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
+
         .main-article { order: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
         @media (min-width: 992px) { .main-article { order: 2; padding: 2.5rem; } }
         
@@ -108,7 +110,6 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
-        /* Блок похожих статей внизу */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
@@ -120,10 +121,9 @@
     </style>
 </head>
 <body>
-    <!-- Шапка с категориями -->
     <header>
         <div class="container header-inner">
-            <a href="/" class="logo">📚 Справочник школьника</a>
+            <a href="/" class="logo">📚 Сдал на 5</a>
             <nav class="nav-categories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
@@ -134,7 +134,6 @@
     </header>
 
     <div class="container">
-        <!-- Хлебные крошки -->
         <nav class="breadcrumbs" aria-label="Хлебные крошки">
             <a href="/">Главная</a>
             <span>/</span>
@@ -143,11 +142,16 @@
             <span class="current">Былина «Алеша Попович и Тугарин Змеевич»: анализ, герои и читательский дневник</span>
         </nav>
 
-        <!-- Основная сетка -->
         <div class="layout-grid">
-            <!-- Сайдбар -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
+                    <!-- Поиск по базе -->
+                    <div class="widget search-widget">
+                        <div class="widget-title">🔍 Поиск произведений</div>
+                        <input type="text" class="search-input" id="liveSearchInput" placeholder="Название или автор..." autocomplete="off">
+                        <div class="search-results" id="liveSearchResults"></div>
+                    </div>
+
                     <!-- Оглавление -->
                     <div class="widget">
                         <div class="widget-title">📋 Содержание</div>
@@ -166,17 +170,17 @@
                 </div>
             </aside>
 
-            <!-- Тело статьи -->
             <main class="main-article">
                 <article>
                     <h1>Былина «Алеша Попович и Тугарин Змеевич»: анализ, герои и читательский дневник</h1>
                     <div class="article-content">
                         
-                        <h2 id="toc-1">Введение</h2><p>Былина <b>«Алеша Попович и Тугарин Змеевич»</b> — одно из ярчайших произведений русского героического эпоса. В отличие от старших богатырей (Ильи Муромца и Добрыни Никитича), Алеша Попович берет верх над врагом не столько богатырской силой, сколько умом, смекалкой, дерзостью и хитростью. Это делает образ младшего богатыря особенно живым и интересным для школьного изучения.</p><h2 id="toc-2">Краткое содержание былины</h2><p>Действие начинается в стольном граде Киеве на пиру у князя Владимира. На пиру присутствует младший богатырь Алеша Попович, сын ростовского священника (попа). Внезапно в палаты без всякого уважения вламывается грозный иноземный богатырь — Тугарин Змеевич. Он ведет себя нагло, оскорбляет князя и княгиню Апраксию, а также угрожает расправой русским богатырям.</p><p>Алеша Попович не боится дерзкого гостя и открыто обличает его, напоминая о его происхождении и бахвальстве. Между ними вспыхивает словесная перепалка, переходящая в вызов на бой. Алеша договаривается с Тугариным встретиться в чистом поле.</p><p>Перед битвой Алеша хитростью побеждает врага. Когда начинается гроза, он просит Тугарина посмотреть вверх, якобы на удивительное чудо — тучу с громом. Пока удивленный и простодушный Тугарин задирает голову, Алеша наносит ему стремительный удар и повергает врага. После этого богатырь отрубает Тугарину голову и привозит ее в Киев на копье, доказывая князю свою победу.</p><h2 id="toc-3">Главная мысль и идея произведения</h2><ul><li><b>Торжество ума над грубой силой:</b> Алеша Попович побеждает грозного и физически сильного противника благодаря смекалке, быстрой реакции и хитрости.</li><li><b>Патриотизм и защита Родины:</b> Защита родной земли и чести князя от зарвавшегося захватчика — долг каждого богатыря.</li><li><b>Осуждение гордыни и наглости:</b> На примере Тугарина Змеевича автор показывает, что бахвальство и неуважение к чужой земле всегда наказываются.</li></ul><h2 id="toc-4">Характеристика главных героев</h2><ul><li><b>Алеша Попович:</b> Младший из трех главных богатырей. Он умен, смел, находчив, дерзок и обладает чувством юмора. Иногда бывает излишне хвастлив или лукав, но в решающий момент проявляет подлинный героизм и преданность Руси.</li><li><b>Тугарин Змеевич:</b> Отрицательный персонаж, олицетворяющий степных кочевников-захватчиков. Он наделен чертами змея (ассоциация со злом и нечистой силой), ведет себя нагло, жадно ест и пьет, презирает окружающих и отличается глупостью, что и приводит его к гибели.</li><li><b>Князь Владимир:</b> Представлен как собирательный образ правителя Киевской Руси. В былине он часто бывает доверчивым, иногда опасается сильных врагов, но именно богатыри защищают его престол и государство.</li></ul><h2 id="toc-5">Материал для читательского дневника</h2><ol><li><b>Автор:</b> Народ (русский героический эпос).</li><li><b>Жанр:</b> Былина.</li><li><b>Главные герои:</b> Алеша Попович, Тугарин Змеевич, князь Владимир.</li><li><b>Чему учит произведение:</b> Былина учит не пасовать перед лицом сильного и наглого врага, использовать не только силу, но и острый ум, смекалку, а также всегда защищать свою Родину.</li></ol>
+                        
+                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Былина <b>«Алеша Попович и Тугарин Змеевич»</b> — одно из ярчайших произведений русского героического эпоса. В отличие от старших богатырей (Ильи Муромца и Добрыни Никитича), Алеша Попович берет верх над врагом не столько богатырской силой, сколько умом, смекалкой, дерзостью и хитростью. Это делает образ младшего богатыря особенно живым и интересным для школьного изучения.</p><h2 id="toc-2" id="toc-2">Краткое содержание былины</h2><p>Действие начинается в стольном граде Киеве на пиру у князя Владимира. На пиру присутствует младший богатырь Алеша Попович, сын ростовского священника (попа). Внезапно в палаты без всякого уважения вламывается грозный иноземный богатырь — Тугарин Змеевич. Он ведет себя нагло, оскорбляет князя и княгиню Апраксию, а также угрожает расправой русским богатырям.</p><p>Алеша Попович не боится дерзкого гостя и открыто обличает его, напоминая о его происхождении и бахвальстве. Между ними вспыхивает словесная перепалка, переходящая в вызов на бой. Алеша договаривается с Тугариным встретиться в чистом поле.</p><p>Перед битвой Алеша хитростью побеждает врага. Когда начинается гроза, он просит Тугарина посмотреть вверх, якобы на удивительное чудо — тучу с громом. Пока удивленный и простодушный Тугарин задирает голову, Алеша наносит ему стремительный удар и повергает врага. После этого богатырь отрубает Тугарину голову и привозит ее в Киев на копье, доказывая князю свою победу.</p><h2 id="toc-3" id="toc-3">Главная мысль и идея произведения</h2><ul><li><b>Торжество ума над грубой силой:</b> Алеша Попович побеждает грозного и физически сильного противника благодаря смекалке, быстрой реакции и хитрости.</li><li><b>Патриотизм и защита Родины:</b> Защита родной земли и чести князя от зарвавшегося захватчика — долг каждого богатыря.</li><li><b>Осуждение гордыни и наглости:</b> На примере Тугарина Змеевича автор показывает, что бахвальство и неуважение к чужой земле всегда наказываются.</li></ul><h2 id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><b>Алеша Попович:</b> Младший из трех главных богатырей. Он умен, смел, находчив, дерзок и обладает чувством юмора. Иногда бывает излишне хвастлив или лукав, но в решающий момент проявляет подлинный героизм и преданность Руси.</li><li><b>Тугарин Змеевич:</b> Отрицательный персонаж, олицетворяющий степных кочевников-захватчиков. Он наделен чертами змея (ассоциация со злом и нечистой силой), ведет себя нагло, жадно ест и пьет, презирает окружающих и отличается глупостью, что и приводит его к гибели.</li><li><b>Князь Владимир:</b> Представлен как собирательный образ правителя Киевской Руси. В былине он часто бывает доверчивым, иногда опасается сильных врагов, но именно богатыри защищают его престол и государство.</li></ul><h2 id="toc-5" id="toc-5">Материал для читательского дневника</h2><ol><li><b>Автор:</b> Народ (русский героический эпос).</li><li><b>Жанр:</b> Былина.</li><li><b>Главные герои:</b> Алеша Попович, Тугарин Змеевич, князь Владимир.</li><li><b>Чему учит произведение:</b> Былина учит не пасовать перед лицом сильного и наглого врага, использовать не только силу, но и острый ум, смекалку, а также всегда защищать свою Родину.</li></ol>
+                    
                     
                     </div>
 
-                    <!-- Рекомендуемые статьи внизу (подвал статьи) -->
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
@@ -190,8 +194,69 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Справочник школьника — образовательные материалы и читательские дневники</p>
+            <p>© 2026 Сдал на 5 — образовательный справочник школьника</p>
         </div>
     </footer>
+
+    <!-- Скрипт живого поиска -->
+    <script>
+    (function() {
+        var input = document.getElementById('liveSearchInput');
+        var results = document.getElementById('liveSearchResults');
+        var searchIndex = null;
+
+        if (!input || !results) return;
+
+        function loadIndex() {
+            if (searchIndex !== null) return;
+            fetch('/search.json')
+                .then(function(res) { return res.json(); })
+                .then(function(data) { searchIndex = data; })
+                .catch(function(e) { console.error('Ошибка загрузки поиска:', e); });
+        }
+
+        input.addEventListener('focus', loadIndex);
+
+        input.addEventListener('input', function() {
+            var q = this.value.trim().toLowerCase();
+            if (q.length < 2) {
+                results.style.display = 'none';
+                results.innerHTML = '';
+                return;
+            }
+
+            if (!searchIndex) {
+                loadIndex();
+                return;
+            }
+
+            var matches = searchIndex.filter(function(item) {
+                return item.title.toLowerCase().indexOf(q) !== -1;
+            }).slice(0, 7);
+
+            if (matches.length === 0) {
+                results.innerHTML = '<div style="padding: 0.75rem; font-size: 0.85rem; color: #94a3b8; text-align: center;">Ничего не найдено</div>';
+                results.style.display = 'block';
+                return;
+            }
+
+            var html = matches.map(function(item) {
+                return '<a href="' + item.url + '" class="search-item">' +
+                       '<strong>' + item.title + '</strong>' +
+                       '<span class="search-item-meta">' + item.category + '</span>' +
+                       '</a>';
+            }).join('');
+
+            results.innerHTML = html;
+            results.style.display = 'block';
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!input.contains(e.target) && !results.contains(e.target)) {
+                results.style.display = 'none';
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
