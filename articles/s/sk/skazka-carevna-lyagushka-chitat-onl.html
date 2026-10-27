@@ -52,11 +52,11 @@
             --border: #e2e8f0;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.65; }
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
         .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
@@ -69,7 +69,7 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 8px 12px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             color: #0f172a;
         }
@@ -84,7 +84,6 @@
             margin-top: 0.5rem;
         }
         .nav-categories.is-open { display: flex; }
-        
         .nav-categories a {
             color: var(--text-muted);
             font-weight: 500;
@@ -115,7 +114,6 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
@@ -131,8 +129,36 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        
-        /* Читайте также в сайдбаре - четко кликабельный стиль */
+
+        /* Оглавление: четкие кликабельные ссылки с отступами */
+        .widget nav.toc-nav ol, .widget nav.toc-nav ul { list-style: none; counter-reset: toc-counter; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav.toc-nav li { position: relative; }
+        .widget nav.toc-nav li a {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            line-height: 1.45;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 4px 6px;
+            border-radius: 6px;
+            transition: background-color 0.15s, color 0.15s;
+        }
+        .widget nav.toc-nav li a:hover {
+            background-color: #eff6ff;
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+        .widget nav.toc-nav li a::before {
+            content: "§";
+            color: #93c5fd;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Сайдбар "Читайте также" */
         .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
         .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
         .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
@@ -140,11 +166,7 @@
         .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
         .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
 
-        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget nav ul li a:hover { color: var(--primary); }
-
-        /* Поисковая строка */
+        /* Поиск */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -156,8 +178,9 @@
 
         .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
         @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
-        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
-        .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
+        /* scroll-margin-top чтобы липкая шапка не закрывала заголовок */
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); scroll-margin-top: 80px; }
+        .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; scroll-margin-top: 80px; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
         .main-article li { margin-bottom: 0.4rem; }
@@ -166,7 +189,6 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
-        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
@@ -195,10 +217,7 @@
             text-decoration-color: #93c5fd;
             text-underline-offset: 3px;
         }
-        .related-card a:hover {
-            color: var(--primary);
-            text-decoration-color: var(--primary);
-        }
+        .related-card a:hover { color: var(--primary); text-decoration-color: var(--primary); }
         .related-card .action-hint {
             display: inline-block;
             margin-top: 0.6rem;
@@ -208,7 +227,45 @@
             text-decoration: none;
         }
 
-        footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+        footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+        .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1rem; font-size: 0.85rem; }
+        .footer-links a { color: var(--text-muted); }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* Плашка согласия на куки */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            max-width: 500px;
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            z-index: 9999;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .cookie-banner a { color: #93c5fd; text-decoration: underline; }
+        .cookie-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            transition: background-color 0.15s;
+        }
+        .cookie-btn:hover { background: var(--primary-hover); }
     </style>
 </head>
 <body>
@@ -244,7 +301,9 @@
                         
                         
                         
+                        
                         <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Русская народная сказка «Царевна-лягушка» — одно из самых известных и любимых произведений устного народного творчества. Сюжет о заколдованной невесте, испытаниях и победе добра над злом знаком каждому с детства. В этой статье мы подробно разберем сказку, выделим ее главную мысль, дадим характеристику персонажей и составим удобный план для читательского дневника.</p><h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание сказки</h2><p>У царя было три сына. Пришло время им жениться, и отец велел сыновьям пустить стрелы в разные стороны: куда стрела упадет, там и судьба их искать. Старший сын попал на боярский двор, средний — к богатому купцу, а младший, Иван-царевич, нашел свою стрелу на болотной кочке в лапах у лягушки.</p><p>Царь устроил для невесток три испытания: соткать ковер, испечь хлеб и явиться на пир. Лягушка с помощью волшебства блестяще справилась со всеми заданиями, а на пиру явила себя в образе прекрасной царевны Василисы Премудрой.</p><p>Иван-царевич поспешил домой и сжег лягушечью кожу, думая, что избавит жену от заклятия. Но этим он нарушил запрет: Василиса исчезла. Герою пришлось отправиться в далекий путь на ее поиски, пройти через множество испытаний, победить Кощея Бессмертного и спасти любимую.</p><h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главная мысль и смысл произведения</h2><p>Главная мысль сказки «Царевна-лягушка» заключается в том, что истинная красота, мудрость и доброта часто скрыты за скромной или неприглядной внешней оболочкой. Внутренние качества человека всегда важнее внешности.</p><ul><li><strong>Сила верности и любви:</strong> Иван-царевич ради спасения жены готов пройти любые испытания.</li><li><strong>Преодоление трудностей:</strong> Помощь сказочных животных доказывает, что доброта к окружающему миру всегда возвращается сторицей.</li><li><strong>Важность послушания и терпения:</strong> Ошибка Ивана-царевича (сжигание кожи) учит тому, что нельзя нарушать договоренности и спешить с выводами.</li></ul><h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Иван-царевич:</strong> Младший царский сын. Добрый, смелый, решительный, готовый исправить свою ошибку и пойти на край света ради любимой.</li><li><strong>Василиса Премудрая (Царевна-лягушка):</strong> Умная, искусная мастерица, добрая и верная жена. Обладает волшебной силой, но покорно несет свое проклятие до срока.</li><li><strong>Царь-отец:</strong> Мудрый правитель, который дает сыновьям сложные, но справедливые поручения для проверки их будущих жен.</li><li><strong>Помощники (медведь, селезень, заяц, щука):</strong> Благодарные животные, которых Иван-царевич пощадил на охоте и которые помогли ему победить Кощея.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5">План для читательского дневника</h2><ol><li><strong>Название:</strong> «Царевна-лягушка» (русская народная сказка).</li><li><strong>Главные герои:</strong> Иван-царевич, Василиса Премудрая, царь, животные-помощники.</li><li><strong>Краткий сюжет:</strong> Стрельба из лука, выбор невест, испытания от царя, сожжение кожи лягушки, поиски Василисы и победа над Кощеем.</li><li><strong>Главная мысль:</strong> Внутренние достоинства человека важнее его внешней оболочки; любовь и преданность преодолевают любые преграды.</li><li><strong>Мое впечатление:</strong> Сказка учит верить в чудо, быть добрым к животным и людям, а также ценить и беречь тех, кого любишь.</li></ol><h2 id="toc-6" id="toc-6" id="toc-6" id="toc-6" id="toc-6">Заключение</h2><p>Чтение сказки «Царевна-лягушка» развивает воображение, учит отличать добро от зла и показывает ценность взаимовыручки. Произведение актуально во все времена и остается жемчужиной русской культуры.</p>
+                    
                     
                     
                     
@@ -270,8 +329,8 @@
                     </div>
 
                     <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
+                        <div class="widget-title">📋 Содержание статьи</div>
+                        <nav class="toc-nav">
                             <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание сказки</a></li><li><a href="#toc-3">Главная мысль и смысл произведения</a></li><li><a href="#toc-4">Характеристика главных героев</a></li><li><a href="#toc-5">План для читательского дневника</a></li><li><a href="#toc-6">Заключение</a></li></ul>
                         </nav>
                     </div>
@@ -290,8 +349,19 @@
     <footer>
         <div class="container">
             <p>© 2026 Сдал на 5 — образовательный справочник школьника</p>
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <span>•</span>
+                <a href="/privacy/">Политика конфиденциальности</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Плашка Cookie -->
+    <div class="cookie-banner" id="cookieBanner">
+        <span>Мы используем файлы cookie для улучшения работы сайта. Подробнее в нашей <a href="/privacy/">Политике конфиденциальности</a>.</span>
+        <button class="cookie-btn" id="acceptCookie">Понятно</button>
+    </div>
 
     <script>
     // Меню-бургер для мобильных
@@ -304,6 +374,19 @@
                 toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
             });
         }
+    })();
+
+    // Логика баннера Cookie
+    (function() {
+        var banner = document.getElementById('cookieBanner');
+        var btn = document.getElementById('acceptCookie');
+        if (!localStorage.getItem('cookie_accepted')) {
+            banner.style.display = 'flex';
+        }
+        btn.addEventListener('click', function() {
+            localStorage.setItem('cookie_accepted', '1');
+            banner.style.display = 'none';
+        });
     })();
 
     // Живой поиск

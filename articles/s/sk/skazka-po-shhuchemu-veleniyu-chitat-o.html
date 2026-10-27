@@ -52,11 +52,11 @@
             --border: #e2e8f0;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.65; }
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
         .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
@@ -69,7 +69,7 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 8px 12px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             color: #0f172a;
         }
@@ -84,7 +84,6 @@
             margin-top: 0.5rem;
         }
         .nav-categories.is-open { display: flex; }
-        
         .nav-categories a {
             color: var(--text-muted);
             font-weight: 500;
@@ -115,7 +114,6 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
@@ -131,8 +129,36 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        
-        /* Читайте также в сайдбаре - четко кликабельный стиль */
+
+        /* Оглавление: четкие кликабельные ссылки с отступами */
+        .widget nav.toc-nav ol, .widget nav.toc-nav ul { list-style: none; counter-reset: toc-counter; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav.toc-nav li { position: relative; }
+        .widget nav.toc-nav li a {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            line-height: 1.45;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 4px 6px;
+            border-radius: 6px;
+            transition: background-color 0.15s, color 0.15s;
+        }
+        .widget nav.toc-nav li a:hover {
+            background-color: #eff6ff;
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+        .widget nav.toc-nav li a::before {
+            content: "§";
+            color: #93c5fd;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Сайдбар "Читайте также" */
         .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
         .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
         .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
@@ -140,11 +166,7 @@
         .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
         .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
 
-        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget nav ul li a:hover { color: var(--primary); }
-
-        /* Поисковая строка */
+        /* Поиск */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -156,8 +178,9 @@
 
         .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
         @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
-        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
-        .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
+        /* scroll-margin-top чтобы липкая шапка не закрывала заголовок */
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); scroll-margin-top: 80px; }
+        .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; scroll-margin-top: 80px; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
         .main-article li { margin-bottom: 0.4rem; }
@@ -166,7 +189,6 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
-        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
@@ -195,10 +217,7 @@
             text-decoration-color: #93c5fd;
             text-underline-offset: 3px;
         }
-        .related-card a:hover {
-            color: var(--primary);
-            text-decoration-color: var(--primary);
-        }
+        .related-card a:hover { color: var(--primary); text-decoration-color: var(--primary); }
         .related-card .action-hint {
             display: inline-block;
             margin-top: 0.6rem;
@@ -208,7 +227,45 @@
             text-decoration: none;
         }
 
-        footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+        footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+        .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1rem; font-size: 0.85rem; }
+        .footer-links a { color: var(--text-muted); }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* Плашка согласия на куки */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            max-width: 500px;
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            z-index: 9999;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .cookie-banner a { color: #93c5fd; text-decoration: underline; }
+        .cookie-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            transition: background-color 0.15s;
+        }
+        .cookie-btn:hover { background: var(--primary-hover); }
     </style>
 </head>
 <body>
@@ -241,7 +298,9 @@
                     <div class="article-content">
                         
                         
+                        
                         <h2 id="toc-1" id="toc-1">Введение</h2><p>Русская народная сказка «По щучьему велению» — одно из самых известных произведений устного народного творчества. Сюжет о ленивом парне, который благодаря волшебному помощнику добивается успеха и даже женится на царской дочери, знаком каждому с раннего детства. Эта сказка не только развлекает, но и несет глубокий жизненный смысл.</p><h2 id="toc-2" id="toc-2">Главные герои сказки</h2><ul><li><strong>Емеля</strong> — главный герой, крестьянский сын. В начале сказки он предстает ленивым увальнем, который целыми днями лежит на печи и не хочет работать. Однако Емеля не злой, а простодушный, добрый и доверчивый парень. Его умение проявить милосердие (он отпускает пойманную щуку обратно в воду) вознаграждается сторицей.</li><li><strong>Щука</strong> — волшебная помощница. Она выступает в роли благодарного существа, которое наделяет Емелю магической силой. Именно ее фраза «По щучьему велению, по моему хотенью» становится главным двигателем сюжета.</li><li><strong>Царь Горох</strong> — типичный сказочный правитель: властный, вспыльчивый, но в то же время несколько простодушный и зависимый от обстоятельств.</li><li><strong>Царевна Марья</strong> — царская дочь, которая поначалу пренебрежительно относится к Емеле, но в итоге становится его верной спутницей.</li></ul><h2 id="toc-3" id="toc-3">Краткое содержание</h2><p>Жил-был крестьянин Емеля. Было у него два брата, которые работали за двоих, а Емеля только и делал, что лежал на печи. Однажды невестки попросили его сходить за водой. Емеля неохотно отправился на реку, зачерпнул ведра, а вместе с водой поймал в проруби огромную щуку.</p><p>Щука заговорила человеческим голосом и попросила отпустить ее, пообещав исполнять любые желания. Емеля отпустил рыбу и вскоре убедился в ее словах: стоило ему произнести заветные слова («По щучьему велению, по моему хотенью...»), как ведра сами пошли домой, а дрова сами нарубились.</p><p>Слава о чудесах дошла до царя. Он приказал доставить Емелю во дворец. Царевна Марья посмотрела на простого парня и посмеялась над ним. Рассерженный Емеля загадал желание, чтобы царевна влюбилась в него. Позже царь велел заколотить Емелю с царевной в бочку и бросить в море. Но по воле щуки бочка выбросила их на прекрасный остров, где Емеля с помощью магии построил дворец. В конце сказки царь приезжает к ним в гости, прощает Емелю и справляет пышную свадьбу.</p><h2 id="toc-4" id="toc-4">Главная мысль и мораль произведения</h2><p>Главная мысль сказки «По щучьему велению» заключается в том, что добро всегда возвращается добром. Емеля пожалел щуку и отпустил ее, за что получил щедрую награду.</p><p>Кроме того, сказка высмеивает человеческую лень, но показывает парадоксальную вещь: удача и везение порой сопутствуют тем, кто не суетится зря, сохраняет спокойствие и добродушие. Тем не менее, народная мудрость учит читателя надеяться не только на чудо («на щучье веление»), но и на собственные силы.</p><h2 id="toc-5" id="toc-5">Материал для читательского дневника</h2><blockquote><p><strong>Автор:</strong> Русский народ<br><strong>Жанр:</strong> Волшебная сказка<br><strong>Главные герои:</strong> Емеля, Щука, Царь, Царевна Марья.</p></blockquote><ol><li><strong>О чем произведение:</strong> О ленивом парне Емеле, который поймал волшебную щуку и получил способность исполнять любые желания, а в итоге женился на царевне.</li><li><strong>Чему учит:</strong> Учит быть добрым, отзывчивым, милосердным к животным и природе. Показывает, что за добрые поступки всегда воздается.</li><li><strong>Мое мнение:</strong> Сказка очень веселая и интересная. Мне понравился Емеля — несмотря на свою лень, он не делает зла окружающим. Сказка доказывает, что чудеса случаются с теми, кто способен на бескорыстные поступки.</li></ol>
+                    
                     
                     
                     </div>
@@ -264,8 +323,8 @@
                     </div>
 
                     <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
+                        <div class="widget-title">📋 Содержание статьи</div>
+                        <nav class="toc-nav">
                             <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Главные герои сказки</a></li><li><a href="#toc-3">Краткое содержание</a></li><li><a href="#toc-4">Главная мысль и мораль произведения</a></li><li><a href="#toc-5">Материал для читательского дневника</a></li></ul>
                         </nav>
                     </div>
@@ -284,8 +343,19 @@
     <footer>
         <div class="container">
             <p>© 2026 Сдал на 5 — образовательный справочник школьника</p>
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <span>•</span>
+                <a href="/privacy/">Политика конфиденциальности</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Плашка Cookie -->
+    <div class="cookie-banner" id="cookieBanner">
+        <span>Мы используем файлы cookie для улучшения работы сайта. Подробнее в нашей <a href="/privacy/">Политике конфиденциальности</a>.</span>
+        <button class="cookie-btn" id="acceptCookie">Понятно</button>
+    </div>
 
     <script>
     // Меню-бургер для мобильных
@@ -298,6 +368,19 @@
                 toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
             });
         }
+    })();
+
+    // Логика баннера Cookie
+    (function() {
+        var banner = document.getElementById('cookieBanner');
+        var btn = document.getElementById('acceptCookie');
+        if (!localStorage.getItem('cookie_accepted')) {
+            banner.style.display = 'flex';
+        }
+        btn.addEventListener('click', function() {
+            localStorage.setItem('cookie_accepted', '1');
+            banner.style.display = 'none';
+        });
     })();
 
     // Живой поиск

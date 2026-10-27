@@ -52,11 +52,11 @@
             --border: #e2e8f0;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.65; }
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
         .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
         .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
@@ -69,7 +69,7 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 8px 12px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             color: #0f172a;
         }
@@ -84,7 +84,6 @@
             margin-top: 0.5rem;
         }
         .nav-categories.is-open { display: flex; }
-        
         .nav-categories a {
             color: var(--text-muted);
             font-weight: 500;
@@ -115,7 +114,6 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
@@ -131,8 +129,36 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        
-        /* Читайте также в сайдбаре - четко кликабельный стиль */
+
+        /* Оглавление: четкие кликабельные ссылки с отступами */
+        .widget nav.toc-nav ol, .widget nav.toc-nav ul { list-style: none; counter-reset: toc-counter; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav.toc-nav li { position: relative; }
+        .widget nav.toc-nav li a {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+            line-height: 1.45;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 4px 6px;
+            border-radius: 6px;
+            transition: background-color 0.15s, color 0.15s;
+        }
+        .widget nav.toc-nav li a:hover {
+            background-color: #eff6ff;
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+        .widget nav.toc-nav li a::before {
+            content: "§";
+            color: #93c5fd;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Сайдбар "Читайте также" */
         .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
         .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
         .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
@@ -140,11 +166,7 @@
         .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
         .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
 
-        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget nav ul li a:hover { color: var(--primary); }
-
-        /* Поисковая строка */
+        /* Поиск */
         .search-widget { position: relative; }
         .search-input { width: 100%; padding: 0.65rem 0.9rem; font-size: 0.95rem; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.2s; background: #fff; }
         .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
@@ -156,8 +178,9 @@
 
         .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
         @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
-        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
-        .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
+        /* scroll-margin-top чтобы липкая шапка не закрывала заголовок */
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); scroll-margin-top: 80px; }
+        .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; scroll-margin-top: 80px; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
         .main-article li { margin-bottom: 0.4rem; }
@@ -166,7 +189,6 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
-        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
@@ -195,10 +217,7 @@
             text-decoration-color: #93c5fd;
             text-underline-offset: 3px;
         }
-        .related-card a:hover {
-            color: var(--primary);
-            text-decoration-color: var(--primary);
-        }
+        .related-card a:hover { color: var(--primary); text-decoration-color: var(--primary); }
         .related-card .action-hint {
             display: inline-block;
             margin-top: 0.6rem;
@@ -208,7 +227,45 @@
             text-decoration: none;
         }
 
-        footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+        footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
+        .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1rem; font-size: 0.85rem; }
+        .footer-links a { color: var(--text-muted); }
+        .footer-links a:hover { color: var(--primary); }
+
+        /* Плашка согласия на куки */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            max-width: 500px;
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            z-index: 9999;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .cookie-banner a { color: #93c5fd; text-decoration: underline; }
+        .cookie-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            transition: background-color 0.15s;
+        }
+        .cookie-btn:hover { background: var(--primary-hover); }
     </style>
 </head>
 <body>
@@ -244,7 +301,9 @@
                         
                         
                         
+                        
                         <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Русская народная сказка «Жихарка» — это любимое многими поколениями детей произведение о смекалке, находчивости и взаимовыручке. Эта короткая, но динамичная история учит юных читателей тому, что даже в самых опасных и безвыходных ситуациях не стоит падать духом, ведь острый ум и сообразительность помогают победить любого врага.</p><h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание сказки «Жихарка»</h2><p>Жили-были кот и петух, а с ними вместе жил маленький мальчик по имени Жихарка. Кот с петухом уходили в лес работать — дрова рубить, а Жихарку оставляли дома одного и строго-настрого наказывать запираться на задвижку и никому не открывать дверь.</p><p>Однажды к избушке пришла хитрая Лиса. Заглянув в окно и услышав веселый голос мальчика, она решила его обмануть. Лиса ласковым голосом уговорила Жихарку открыть дверь, схватила его и унесла в свою нору в лесу. Злодейка задумала испечь мальчика и съесть.</p><p>Лиса приготовила печь и велела Жихарке лечь на лопату, чтобы он показал, как правильно садиться. Но сообразительный Жихарка притворился, что ничего не понимает, и каждый раз ложился неправильно: то ноги вытянет, то голову свесит. Лиса злилась, учила его снова и снова, пока мальчик не предложил ей самой показать, как надо.</p><p>Как только доверчивая Лиса легла на лопату, Жихарка быстрó задвинул ее в печь и закрыл заслонку. После этого мальчик спокойно выбрался из норы, побежал обратно в лес и благополучно вернулся домой к своим верным друзьям — коту и петуху.</p><h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главные герои</h2><ul><li><strong>Жихарка</strong> — главный герой, маленький, но очень смышленый и находчивый мальчик. Не растерялся в опасности и перехитрил хитрую Лису.</li><li><strong>Лиса</strong> — отрицательный персонаж, коварная и жадная. Была наказана за свою самоуверенность и глупость.</li><li><strong>Кот и Петух</strong> — заботливые старшие товарищи Жихарки, которые переживали за мальчика и предупреждали его об опасности.</li></ul><h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4">Главная мысль сказки</h2><p>Главная идея произведения заключается в том, что смекалка, ум и хладнокровие ценятся выше физической силы. В сложной ситуации важно не паниковать, а думать головой. Кроме того, сказка напоминает о важности послушания старшим: беда случилась именно тогда, когда Жихарка ослушался совета кота и петуха и открыл дверь незнакомцу.</p><h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5">Материал для читательского дневника</h2><ol><li><strong>Название:</strong> «Жихарка» (русская народная сказка).</li><li><strong>Жанр:</strong> Волшебная (или бытовая) сказка о животных и людях.</li><li><strong>Главная мысль:</strong> Смекалка и находчивость помогают выйти победителем из любой сложной ситуации. Нужно слушать старших.</li><li><strong>Чему учит:</strong> Учит не теряться в опасности, быть сообразительным, осторожным с незнакомцами и ценить дружбу.</li></ol>
+                    
                     
                     
                     
@@ -270,8 +329,8 @@
                     </div>
 
                     <div class="widget">
-                        <div class="widget-title">📋 Содержание</div>
-                        <nav>
+                        <div class="widget-title">📋 Содержание статьи</div>
+                        <nav class="toc-nav">
                             <ul><li><a href="#toc-1">Введение</a></li><li><a href="#toc-2">Краткое содержание сказки «Жихарка»</a></li><li><a href="#toc-3">Главные герои</a></li><li><a href="#toc-4">Главная мысль сказки</a></li><li><a href="#toc-5">Материал для читательского дневника</a></li></ul>
                         </nav>
                     </div>
@@ -290,8 +349,19 @@
     <footer>
         <div class="container">
             <p>© 2026 Сдал на 5 — образовательный справочник школьника</p>
+            <div class="footer-links">
+                <a href="/">Главная</a>
+                <span>•</span>
+                <a href="/privacy/">Политика конфиденциальности</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Плашка Cookie -->
+    <div class="cookie-banner" id="cookieBanner">
+        <span>Мы используем файлы cookie для улучшения работы сайта. Подробнее в нашей <a href="/privacy/">Политике конфиденциальности</a>.</span>
+        <button class="cookie-btn" id="acceptCookie">Понятно</button>
+    </div>
 
     <script>
     // Меню-бургер для мобильных
@@ -304,6 +374,19 @@
                 toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
             });
         }
+    })();
+
+    // Логика баннера Cookie
+    (function() {
+        var banner = document.getElementById('cookieBanner');
+        var btn = document.getElementById('acceptCookie');
+        if (!localStorage.getItem('cookie_accepted')) {
+            banner.style.display = 'flex';
+        }
+        btn.addEventListener('click', function() {
+            localStorage.setItem('cookie_accepted', '1');
+            banner.style.display = 'none';
+        });
     })();
 
     // Живой поиск
