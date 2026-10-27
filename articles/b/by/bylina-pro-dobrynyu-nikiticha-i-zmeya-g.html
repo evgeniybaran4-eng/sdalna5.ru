@@ -56,12 +56,57 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
-        .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
-        .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
-        .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
+        
+        .menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #0f172a;
+        }
+        
+        .nav-categories {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.5rem;
+        }
+        .nav-categories.is-open { display: flex; }
+        
+        .nav-categories a {
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            background: #f8fafc;
+        }
+        .nav-categories a:hover { color: var(--primary); background: #eff6ff; text-decoration: none; }
+
+        @media (min-width: 860px) {
+            .menu-toggle { display: none; }
+            .nav-categories {
+                display: flex !important;
+                width: auto;
+                flex-direction: row;
+                gap: 0.75rem;
+                padding: 0;
+                border-top: none;
+                margin-top: 0;
+            }
+            .nav-categories a { background: transparent; padding: 0.35rem 0.6rem; }
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
@@ -70,13 +115,13 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка: контент слева, сайдбар справа */
+        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
         @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
 
         .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -86,9 +131,18 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-        .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget li a:hover { color: var(--primary); }
+        
+        /* Читайте также в сайдбаре - четко кликабельный стиль */
+        .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
+        .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .widget ul.related-list li a { font-size: 0.92rem; color: var(--primary); font-weight: 500; line-height: 1.45; display: flex; align-items: baseline; gap: 6px; }
+        .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
+        .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
+
+        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
+        .widget nav ul li a:hover { color: var(--primary); }
 
         /* Поисковая строка */
         .search-widget { position: relative; }
@@ -100,8 +154,9 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
-        .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+        .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
+        @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
@@ -111,12 +166,47 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
+        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-        .related-card { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; transition: border-color 0.2s; }
-        .related-card:hover { border-color: var(--primary); }
-        .related-card a { font-weight: 600; font-size: 0.95rem; color: var(--text-main); display: block; }
+        .related-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 1.1rem;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .related-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+            transform: translateY(-2px);
+        }
+        .related-card a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1e40af;
+            display: block;
+            line-height: 1.4;
+            text-decoration: underline;
+            text-decoration-color: #93c5fd;
+            text-underline-offset: 3px;
+        }
+        .related-card a:hover {
+            color: var(--primary);
+            text-decoration-color: var(--primary);
+        }
+        .related-card .action-hint {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
         footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
     </style>
@@ -125,7 +215,8 @@
     <header>
         <div class="container header-inner">
             <a href="/" class="logo">📚 Сдал на 5</a>
-            <nav class="nav-categories">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰ Меню</button>
+            <nav class="nav-categories" id="navCategories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
                 <a href="/category/analiz-proizvedeniy/">🔍 Анализ произведений</a>
@@ -144,7 +235,6 @@
         </nav>
 
         <div class="layout-grid">
-            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Былина о Добрыне Никитиче и Змее Горыныче: анализ, сюжет и главная мысль</h1>
@@ -153,7 +243,9 @@
                         
                         
                         
-                        <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Былины — это сокровищница русского устного народного творчества. Они рассказывают о подвигах богатырей, защищавших Русь от врагов и чудовищ. Одним из самых популярных и любимых героев былинного эпоса является Добрыня Никитич — воплощение благородства, ума, дипломатии и невероятной силы. Сказание о его поединке с многоглавым Змеем Горынычем — классический сюжет русской мифологии и литературы.</p><h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание былины</h2><p>Сказание начинается с того, что княжна Забава Путятишна, племянница князя Владимира, отправляется гулять к Пучай-реке. Матушка предостерегает Добрыню ездить к этой реке, так как там живет страшный трехглавый Змей Горыныч, похищающий людей. Однако молодой богатырь пренебрегает запретом и отправляется искупаться в реке.</p><p>Внезапно небо темнеет, поднимается буря — это прилетает Змей Горыныч. Добрыня оказывается в воде без оружия и доспехов. Проявив смекалку, он не падает духом: ныряет под воду, хватает змея за «хоботы» (лапы) и начинает оземь бить чудище. Побежденный Змей молит о пощаде и обещает больше не летать на Руси и не красть людей.</p><p>Добрыня отпускает змея, но тот нарушает слово: пользуясь отсутствием богатыря в Киеве, он похищает Забаву Путятишну и уносит ее в свои норы. Князь Владимир узнает об этом и корит Добрыню за то, что тот не добил змея до конца. Богатырь берет на себя ответственность исправить ошибку, отправляется в логово чудовища, побеждает змеенышей, освобождает княжну и возвращает ее в Киев.</p><h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главная мысль произведения</h2><p>Главная идея былины заключается в торжестве добра над злом, света над тьмой. Произведение учит нескольким важным жизненным урокам:</p><ul><li><strong>Ответственность за свои поступки:</strong> Добрыня отпустил змея, поверив на слово, но когда тот нарушил обещание, богатырь довел дело до конца.</li><li><strong>Мужество и отвага:</strong> Даже оставшись без оружия перед лицом смертельной опасности, настоящий герой не сдается.</li><li><strong>Верность долгу:</strong> Защита Родины и ее жителей — главный долг русского богатыря.</li></ul><h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Добрыня Никитич:</strong> Младший богатырь из киевской троицы (вместе с Иллей Муромцем и Алешей Поповичем). Он отличается не только физической силой, но и грамотностью, вежливостью, тактом (его часто называют «вежливым» Добрыней). Он рассудителен, умен и верен своему князю и народу.</li><li><strong>Змей Горыныч:</strong> Олицетворение темных сил, зла, коварства и вероломства. Он нарушает данное слово, нападает подло и беззащитно, но в то же время труслив перед лицом реальной силы.</li><li><strong>Князь Владимир:</strong> Правитель Киева, олицетворяющий государственную власть. В былинах он бывает вспыльчив, но справедлив.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5">Значение для читательского дневника</h2><blockquote><p><strong>План пересказа для читательского дневника:</strong><br>1. Предупреждение матушки и купание на Пучай-реке.<br>2. Первая встреча со Змеем Горынычем и победа без оружия.<br>3. Вероломство змея и похищение Забавы Путятишны.<br>4. Гнев князя Владимира и поход Добрыни в змеиные норы.<br>5. Окончательная победа богатыря и спасение княжны.</p></blockquote><p>Былина о Добрыне Никитиче и Змее Горыныча — это увлекательное произведение, которое помогает понять нравственные идеалы наших предков, воспитывает чувство патриотизма, мужества и ответственности перед своим словом.</p>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Былины — это сокровищница русского устного народного творчества. Они рассказывают о подвигах богатырей, защищавших Русь от врагов и чудовищ. Одним из самых популярных и любимых героев былинного эпоса является Добрыня Никитич — воплощение благородства, ума, дипломатии и невероятной силы. Сказание о его поединке с многоглавым Змеем Горынычем — классический сюжет русской мифологии и литературы.</p><h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание былины</h2><p>Сказание начинается с того, что княжна Забава Путятишна, племянница князя Владимира, отправляется гулять к Пучай-реке. Матушка предостерегает Добрыню ездить к этой реке, так как там живет страшный трехглавый Змей Горыныч, похищающий людей. Однако молодой богатырь пренебрегает запретом и отправляется искупаться в реке.</p><p>Внезапно небо темнеет, поднимается буря — это прилетает Змей Горыныч. Добрыня оказывается в воде без оружия и доспехов. Проявив смекалку, он не падает духом: ныряет под воду, хватает змея за «хоботы» (лапы) и начинает оземь бить чудище. Побежденный Змей молит о пощаде и обещает больше не летать на Руси и не красть людей.</p><p>Добрыня отпускает змея, но тот нарушает слово: пользуясь отсутствием богатыря в Киеве, он похищает Забаву Путятишну и уносит ее в свои норы. Князь Владимир узнает об этом и корит Добрыню за то, что тот не добил змея до конца. Богатырь берет на себя ответственность исправить ошибку, отправляется в логово чудовища, побеждает змеенышей, освобождает княжну и возвращает ее в Киев.</p><h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главная мысль произведения</h2><p>Главная идея былины заключается в торжестве добра над злом, света над тьмой. Произведение учит нескольким важным жизненным урокам:</p><ul><li><strong>Ответственность за свои поступки:</strong> Добрыня отпустил змея, поверив на слово, но когда тот нарушил обещание, богатырь довел дело до конца.</li><li><strong>Мужество и отвага:</strong> Даже оставшись без оружия перед лицом смертельной опасности, настоящий герой не сдается.</li><li><strong>Верность долгу:</strong> Защита Родины и ее жителей — главный долг русского богатыря.</li></ul><h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Добрыня Никитич:</strong> Младший богатырь из киевской троицы (вместе с Иллей Муромцем и Алешей Поповичем). Он отличается не только физической силой, но и грамотностью, вежливостью, тактом (его часто называют «вежливым» Добрыней). Он рассудителен, умен и верен своему князю и народу.</li><li><strong>Змей Горыныч:</strong> Олицетворение темных сил, зла, коварства и вероломства. Он нарушает данное слово, нападает подло и беззащитно, но в то же время труслив перед лицом реальной силы.</li><li><strong>Князь Владимир:</strong> Правитель Киева, олицетворяющий государственную власть. В былинах он бывает вспыльчив, но справедлив.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5">Значение для читательского дневника</h2><blockquote><p><strong>План пересказа для читательского дневника:</strong><br>1. Предупреждение матушки и купание на Пучай-реке.<br>2. Первая встреча со Змеем Горынычем и победа без оружия.<br>3. Вероломство змея и похищение Забавы Путятишны.<br>4. Гнев князя Владимира и поход Добрыни в змеиные норы.<br>5. Окончательная победа богатыря и спасение княжны.</p></blockquote><p>Былина о Добрыне Никитиче и Змее Горыныча — это увлекательное произведение, которое помогает понять нравственные идеалы наших предков, воспитывает чувство патриотизма, мужества и ответственности перед своим словом.</p>
+                    
                     
                     
                     
@@ -163,13 +255,12 @@
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
-                            <div class="related-card"><a href="/articles/b/by/bylina-volga-i-mikula-selyaninovich-ch.html">Былина «Вольга и Микула Селянинович»: анализ, герои и главная мысль</a></div><div class="related-card"><a href="/articles/v/vo/volkh-vseslavevich-bylina-chitatelsk.html">Былина «Вольх Всеславич»: читательский дневник, анализ и главная мысль</a></div><div class="related-card"><a href="/articles/b/by/bylina-alyosha-popovich-i-tugarin-zmeev.html">Былина «Алеша Попович и Тугарин Змеевич»: анализ, герои и читательский дневник</a></div><div class="related-card"><a href="/articles/b/by/bylina-sadko-chitat-onlayn-bespla.html">Былина «Садко»: читать онлайн, краткое содержание и анализ произведения</a></div>
+                            <div class="related-card"><a href="/articles/b/by/bylina-volga-i-mikula-selyaninovich-ch.html">Былина «Вольга и Микула Селянинович»: анализ, герои и главная мысль</a><a href="/articles/b/by/bylina-volga-i-mikula-selyaninovich-ch.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/v/vo/volkh-vseslavevich-bylina-chitatelsk.html">Былина «Вольх Всеславич»: читательский дневник, анализ и главная мысль</a><a href="/articles/v/vo/volkh-vseslavevich-bylina-chitatelsk.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/b/by/bylina-alyosha-popovich-i-tugarin-zmeev.html">Былина «Алеша Попович и Тугарин Змеевич»: анализ, герои и читательский дневник</a><a href="/articles/b/by/bylina-alyosha-popovich-i-tugarin-zmeev.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/b/by/bylina-sadko-chitat-onlayn-bespla.html">Былина «Садко»: читать онлайн, краткое содержание и анализ произведения</a><a href="/articles/b/by/bylina-sadko-chitat-onlayn-bespla.html" class="action-hint">Читать разбор →</a></div>
                         </div>
                     </div>
                 </article>
             </main>
 
-            <!-- Сайдбар справа -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
                     <div class="widget search-widget">
@@ -187,7 +278,7 @@
 
                     <div class="widget">
                         <div class="widget-title">📌 Читайте также</div>
-                        <ul>
+                        <ul class="related-list">
                             <li><a href="/articles/n/na/narodnaya-bylina-sadko-chitatelsk.html">Былина «Садко»: читательский дневник, анализ и главная мысль</a></li><li><a href="/articles/b/by/bylina-pro-dobrynyu-nikiticha-i-zmeya-go.html">Былина о Добрыне Никитиче и Змее Горыныче: анализ, сюжет и читательский дневник</a></li><li><a href="/articles/b/by/bylina-pervyy-boy-ili-muromca-chita.html">Былина «Первый бой Ильи Муромца»: анализ, сюжет и главная мысль</a></li><li><a href="/articles/b/by/bylina-ilya-muromec-i-solovey-razboy.html">Былина «Илья Муромец и Соловей-разбойник»: анализ, герои и читательский дневник</a></li>
                         </ul>
                     </div>
@@ -203,6 +294,19 @@
     </footer>
 
     <script>
+    // Меню-бургер для мобильных
+    (function() {
+        var toggle = document.getElementById('menuToggle');
+        var nav = document.getElementById('navCategories');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('is-open');
+                toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
+            });
+        }
+    })();
+
+    // Живой поиск
     (function() {
         var input = document.getElementById('liveSearchInput');
         var results = document.getElementById('liveSearchResults');

@@ -56,12 +56,57 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
-        .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
-        .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
-        .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
+        
+        .menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #0f172a;
+        }
+        
+        .nav-categories {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.5rem;
+        }
+        .nav-categories.is-open { display: flex; }
+        
+        .nav-categories a {
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            background: #f8fafc;
+        }
+        .nav-categories a:hover { color: var(--primary); background: #eff6ff; text-decoration: none; }
+
+        @media (min-width: 860px) {
+            .menu-toggle { display: none; }
+            .nav-categories {
+                display: flex !important;
+                width: auto;
+                flex-direction: row;
+                gap: 0.75rem;
+                padding: 0;
+                border-top: none;
+                margin-top: 0;
+            }
+            .nav-categories a { background: transparent; padding: 0.35rem 0.6rem; }
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
@@ -70,13 +115,13 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка: контент слева, сайдбар справа */
+        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
         @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
 
         .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -86,9 +131,18 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-        .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget li a:hover { color: var(--primary); }
+        
+        /* Читайте также в сайдбаре - четко кликабельный стиль */
+        .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
+        .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .widget ul.related-list li a { font-size: 0.92rem; color: var(--primary); font-weight: 500; line-height: 1.45; display: flex; align-items: baseline; gap: 6px; }
+        .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
+        .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
+
+        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
+        .widget nav ul li a:hover { color: var(--primary); }
 
         /* Поисковая строка */
         .search-widget { position: relative; }
@@ -100,8 +154,9 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
-        .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+        .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
+        @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
@@ -111,12 +166,47 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
+        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-        .related-card { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; transition: border-color 0.2s; }
-        .related-card:hover { border-color: var(--primary); }
-        .related-card a { font-weight: 600; font-size: 0.95rem; color: var(--text-main); display: block; }
+        .related-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 1.1rem;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .related-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+            transform: translateY(-2px);
+        }
+        .related-card a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1e40af;
+            display: block;
+            line-height: 1.4;
+            text-decoration: underline;
+            text-decoration-color: #93c5fd;
+            text-underline-offset: 3px;
+        }
+        .related-card a:hover {
+            color: var(--primary);
+            text-decoration-color: var(--primary);
+        }
+        .related-card .action-hint {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
         footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
     </style>
@@ -125,7 +215,8 @@
     <header>
         <div class="container header-inner">
             <a href="/" class="logo">📚 Сдал на 5</a>
-            <nav class="nav-categories">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰ Меню</button>
+            <nav class="nav-categories" id="navCategories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
                 <a href="/category/analiz-proizvedeniy/">🔍 Анализ произведений</a>
@@ -144,7 +235,6 @@
         </nav>
 
         <div class="layout-grid">
-            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Русская народная сказка «Гуси-лебеди»: краткое содержание, анализ и читательский дневник</h1>
@@ -153,19 +243,20 @@
                         
                         
                         
-                        <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2>
 <p>Русская народная сказка <strong>«Гуси-лебеди»</strong> — одно из первых и самых любимых произведений, с которыми знакомятся дети. Эта волшебная сказка учит ответственности, послушанию, взаимопомощи и семейной преданности. В данном материале представлен подробный разбор сказки, который поможет школьникам при подготовке к урокам литературы и заполнению читательского дневника.</p>
 
-<h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание сказки</h2>
+<h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание сказки</h2>
 <p>Ушли мать с отцом в город, а дома оставили дочку Машеньку и маленького братца Ваню. Родители наказали девочке беречь брата и никуда со двора не уходить. Но Маша ослушалась: посадила Ваню на травку под окошком, а сама убежала на улицу к подружкам и заигралась.</p>
 <p>Налетели злые <strong>гуси-лебеди</strong> — помощники Бабы-яги, подхватили мальчика и унесли на крыльях. Вернулась Маша, а брата нет. Бросилась девочка на поиски.</p>
 <p>По дороге Маша встретила <em>печь</em>, <em>яблоньку</em> и <em>молочную реку с кисельными берегами</em>. Гордая девочка отказалась помочь им (съесть ржаной пирожок, яблоко, попробовать киселя), за что они не сразу подсказали ей дорогу. Лишь проявив вежливость и трудолюбие на обратном пути, героиня заслужила их помощь.</p>
 <p>Добравшись до избушки Бабы-яги, Маша увидела братца, играющего с золотыми яблочками. Она тайком унесла мальчика. Баба-яга отправила в погоню гусей-лебедей. Спасаясь, дети снова обращались к речке, яблоньке и печке, и те укрыли их от погони под своими ветками и заслонками. Маша с братом благополучно вернулись домой как раз вовремя — перед самым возвращением родителей.</p>
 
-<h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главная мысль сказки</h2>
+<h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главная мысль сказки</h2>
 <p>Главная мысль произведения заключается в том, что <strong>нужно всегда слушать старших</strong> и отвечать за свои поступки. Кроме того, сказка учит добру и взаимовыручке: чтобы получить помощь от других, нужно самому уметь помогать окружающим и быть вежливым.</p>
 
-<h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2>
+<h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2>
 <ul>
   <li><strong>Машенька</strong> — сначала легкомысленная и непослушная девочка, которая поддалась беззаботному веселью. Однако столкнувшись с бедой, она проявляет смелость, решительность, находчивость и готовность спасти брата любой ценой.</li>
   <li><strong>Братец Ваня</strong> — маленький мальчик, жертва беспечности сестры, оказавшийся в плену у лесной колдуньи.</li>
@@ -173,7 +264,7 @@
   <li><strong>Помощники (Печь, Яблонька, Речка)</strong> — олицетворение сил природы и народной мудрости. Они помогают только тем, кто проявляет уважение и заботу.</li>
 </ul>
 
-<h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5">Оформление для читательского дневника</h2>
+<h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5">Оформление для читательского дневника</h2>
 <ol>
   <li><strong>Название:</strong> «Гуси-лебеди» (русская народная сказка).</li>
   <li><strong>Жанр:</strong> волшебная сказка.</li>
@@ -185,18 +276,18 @@
                     
                     
                     
+                    
                     </div>
 
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
-                            <div class="related-card"><a href="/articles/r/ru/russkaya-narodnaya-skazka-soldatskaya-sh.html">Русская народная сказка «Солдатская шинель»: краткое содержание и анализ</a></div><div class="related-card"><a href="/articles/s/sk/skazka-sivka-burka-chitatelskiy-dnev.html">Читательский дневник: русская народная сказка «Сивка-бурка»</a></div><div class="related-card"><a href="/articles/n/na/narodnaya-skazka-sestrica-alenushka-i.html">Русская народная сказка «Сестрица Алёнушка и братец Иванушка»: анализ и читательский дневник</a></div><div class="related-card"><a href="/articles/s/sk/skazka-po-shhuchemu-veleniyu-chitatelsk.html">Читательский дневник: русская народная сказка «По щучьему велению»</a></div>
+                            <div class="related-card"><a href="/articles/r/ru/russkaya-narodnaya-skazka-soldatskaya-sh.html">Русская народная сказка «Солдатская шинель»: краткое содержание и анализ</a><a href="/articles/r/ru/russkaya-narodnaya-skazka-soldatskaya-sh.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/s/sk/skazka-sivka-burka-chitatelskiy-dnev.html">Читательский дневник: русская народная сказка «Сивка-бурка»</a><a href="/articles/s/sk/skazka-sivka-burka-chitatelskiy-dnev.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/n/na/narodnaya-skazka-sestrica-alenushka-i.html">Русская народная сказка «Сестрица Алёнушка и братец Иванушка»: анализ и читательский дневник</a><a href="/articles/n/na/narodnaya-skazka-sestrica-alenushka-i.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/s/sk/skazka-po-shhuchemu-veleniyu-chitatelsk.html">Читательский дневник: русская народная сказка «По щучьему велению»</a><a href="/articles/s/sk/skazka-po-shhuchemu-veleniyu-chitatelsk.html" class="action-hint">Читать разбор →</a></div>
                         </div>
                     </div>
                 </article>
             </main>
 
-            <!-- Сайдбар справа -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
                     <div class="widget search-widget">
@@ -214,7 +305,7 @@
 
                     <div class="widget">
                         <div class="widget-title">📌 Читайте также</div>
-                        <ul>
+                        <ul class="related-list">
                             <li><a href="/articles/n/na/narodnaya-bylina-sadko-chitatelsk.html">Былина «Садко»: читательский дневник, анализ и главная мысль</a></li><li><a href="/articles/n/na/narodnaya-skazka-carevna-nesmeyana.html">Русская народная сказка «Царевна Несмеяна»: анализ, герои и читательский дневник</a></li><li><a href="/articles/n/na/narodnaya-skazka-carevna-lyagushka-ch.html">Русская народная сказка «Царевна-лягушка»: краткое содержание, анализ и главные герои</a></li><li><a href="/articles/n/na/narodnaya-skazka-finist-yasnyy-sokol.html">Русская народная сказка «Финист — Ясный Сокол»: анализ, сюжет и главная мысль</a></li>
                         </ul>
                     </div>
@@ -230,6 +321,19 @@
     </footer>
 
     <script>
+    // Меню-бургер для мобильных
+    (function() {
+        var toggle = document.getElementById('menuToggle');
+        var nav = document.getElementById('navCategories');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('is-open');
+                toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
+            });
+        }
+    })();
+
+    // Живой поиск
     (function() {
         var input = document.getElementById('liveSearchInput');
         var results = document.getElementById('liveSearchResults');

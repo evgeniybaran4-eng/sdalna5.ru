@@ -56,12 +56,57 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
-        .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
-        .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
-        .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
+        
+        .menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #0f172a;
+        }
+        
+        .nav-categories {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.5rem;
+        }
+        .nav-categories.is-open { display: flex; }
+        
+        .nav-categories a {
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            background: #f8fafc;
+        }
+        .nav-categories a:hover { color: var(--primary); background: #eff6ff; text-decoration: none; }
+
+        @media (min-width: 860px) {
+            .menu-toggle { display: none; }
+            .nav-categories {
+                display: flex !important;
+                width: auto;
+                flex-direction: row;
+                gap: 0.75rem;
+                padding: 0;
+                border-top: none;
+                margin-top: 0;
+            }
+            .nav-categories a { background: transparent; padding: 0.35rem 0.6rem; }
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
@@ -70,13 +115,13 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка: контент слева, сайдбар справа */
+        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
         @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
 
         .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -86,9 +131,18 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-        .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget li a:hover { color: var(--primary); }
+        
+        /* Читайте также в сайдбаре - четко кликабельный стиль */
+        .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
+        .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .widget ul.related-list li a { font-size: 0.92rem; color: var(--primary); font-weight: 500; line-height: 1.45; display: flex; align-items: baseline; gap: 6px; }
+        .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
+        .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
+
+        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
+        .widget nav ul li a:hover { color: var(--primary); }
 
         /* Поисковая строка */
         .search-widget { position: relative; }
@@ -100,8 +154,9 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
-        .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+        .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
+        @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
@@ -111,12 +166,47 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
+        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-        .related-card { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; transition: border-color 0.2s; }
-        .related-card:hover { border-color: var(--primary); }
-        .related-card a { font-weight: 600; font-size: 0.95rem; color: var(--text-main); display: block; }
+        .related-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 1.1rem;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .related-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+            transform: translateY(-2px);
+        }
+        .related-card a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1e40af;
+            display: block;
+            line-height: 1.4;
+            text-decoration: underline;
+            text-decoration-color: #93c5fd;
+            text-underline-offset: 3px;
+        }
+        .related-card a:hover {
+            color: var(--primary);
+            text-decoration-color: var(--primary);
+        }
+        .related-card .action-hint {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
         footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
     </style>
@@ -125,7 +215,8 @@
     <header>
         <div class="container header-inner">
             <a href="/" class="logo">📚 Сдал на 5</a>
-            <nav class="nav-categories">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰ Меню</button>
+            <nav class="nav-categories" id="navCategories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
                 <a href="/category/analiz-proizvedeniy/">🔍 Анализ произведений</a>
@@ -144,22 +235,22 @@
         </nav>
 
         <div class="layout-grid">
-            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>И. С. Тургенев «Первая любовь»: анализ, краткое содержание и главная мысль</h1>
                     <div class="article-content">
                         
-                        <h2 id="toc-1">Введение</h2>
+                        
+                        <h2 id="toc-1" id="toc-1">Введение</h2>
 <p>Повесть Иван Сергеевича Тургенева «Первая любовь» (1860) — одно из самых автобиографических, глубоких и пронзительных произведений русской классической литературы XIX века. В центре сюжета — сложное и болезненное перерождение шестнадцатилетнего юноши, столкнувшегося с первой страстью, ревностью и первыми взрослыми разочарованиями.</p>
 
-<h2 id="toc-2">Краткое содержание</h2>
+<h2 id="toc-2" id="toc-2">Краткое содержание</h2>
 <p>Действие начинается в Москве, где группа знакомых решает поделиться воспоминаниями о своей первой любви. Главный герой, сорокалетний Владимир П., решает записать свою историю.</p>
 <p>Летом 1830 года шестнадцатилетний Владимир живет с родителями на даче. В соседний дом вселяется княжна Засекина — бедная, но гордая дворянка с дочерью Зинаидой. Зинаиде двадцать один год, она умна, красива, кокетлива и окружена толпой поклонников, среди которых — богатые ухажеры и поэт Малевичский.</p>
 <p>Владимир без памяти влюбляется в Зинаиду. Девочка то приближает его, играя с ним как с ребенком, то жестоко отталкивает. Юноша страдает, но не может избавиться от своего чувства. Вскоре он случайно узнает страшную тайну: соперником юноше неожиданно оказывается его собственный отец, Петр Васильевич П. — властный, холодный и обаятельный мужчина.</p>
 <p>Владимир становится свидетелем тайной связи отца и Зинаиды. Он видит, как гордая девушка полностью подчинена его отцу, который даже может ударить ее хлыстом во время одной из сцен ревности. Вскоре семейство Засекиных покидает дачу, а через несколько лет отец Владимира умирает от инсульта, перед смертью получив письмо из Москвы, которое сильно его потрясло. Повесть заканчивается глубоким философским выводом героя о том, что страсть — это разрушительная и слепая сила.</p>
 
-<h2 id="toc-3">Главная мысль и проблематика</h2>
+<h2 id="toc-3" id="toc-3">Главная мысль и проблематика</h2>
 <p>Главная мысль произведения заключается в том, что первая любовь — это не только светлое и поэтичное чувство, но и тяжелое испытание, способное принести глубокие душевные раны. Тургенев исследует разрушительную природу страсти, которая не выбирает ни возраста, ни социального положения, ни моральных преград.</p>
 <ul>
   <li><strong>Проблема отцов и детей:</strong> конфликт восприятия мира между юношей и его холодным, прагматичным отцом.</li>
@@ -167,14 +258,14 @@
   <li><strong>Потеря иллюзий:</strong> болезненный переход от детского восприятия мира к взрослой суровой реальности.</li>
 </ul>
 
-<h2 id="toc-4">Главные герои</h2>
+<h2 id="toc-4" id="toc-4">Главные герои</h2>
 <ul>
   <li><strong>Владимир П.</strong> — чувствительный, романтичный шестнадцатилетний юноша. Его первая любовь становится для него школой жизни, полной боли и зрелости.</li>
   <li><strong>Зинаида Засекина</strong> — сложный женский образ. С одной стороны, она капризная кокетка, с другой — глубоко несчастная, гордая и способная на настоящую, самоотверженную страсть девушка.</li>
   <li><strong>Петр Васильевич П.</strong> — отец Владимира. Красивый, эгоистичный и властный человек, привыкший подчинять себе людей. Он олицетворяет холодный рассудок и непреодолимую мужскую привлекательность.</li>
 </ul>
 
-<h2 id="toc-5">Для читательского дневника</h2>
+<h2 id="toc-5" id="toc-5">Для читательского дневника</h2>
 <ol>
   <li><strong>Автор:</strong> И. С. Тургенев</li>
   <li><strong>Год написания:</strong> 1860</li>
@@ -183,18 +274,18 @@
   <li><strong>Мой отзыв:</strong> Повесть заставляет задуматься о том, как хрупка человеческая душа в период взросления. История учит тому, что любовь может быть не только радостной, но и трагичной, меняющей всю жизнь человека навсегда.</li>
 </ol>
                     
+                    
                     </div>
 
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
-                            <div class="related-card"><a href="/articles/t/tu/turgenev-i-s-asya-chitat-onlayn-besp.html">И. С. Тургенев, «Ася»: краткое содержание, анализ и читательский дневник</a></div><div class="related-card"><a href="/articles/t/tu/turgenev-i-s-mumu-chitat-onlayn-bes.html">И. С. Тургенев «Муму»: краткое содержание, анализ и читательский дневник</a></div><div class="related-card"><a href="/articles/t/tu/turgenev-i-s-bezhin-lug-chitat-onlay.html">И. С. Тургенев «Бежин луг»: краткое содержание, анализ и читательский дневник</a></div>
+                            <div class="related-card"><a href="/articles/t/tu/turgenev-i-s-asya-chitat-onlayn-besp.html">И. С. Тургенев, «Ася»: краткое содержание, анализ и читательский дневник</a><a href="/articles/t/tu/turgenev-i-s-asya-chitat-onlayn-besp.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/t/tu/turgenev-i-s-mumu-chitat-onlayn-bes.html">И. С. Тургенев «Муму»: краткое содержание, анализ и читательский дневник</a><a href="/articles/t/tu/turgenev-i-s-mumu-chitat-onlayn-bes.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/t/tu/turgenev-i-s-bezhin-lug-chitat-onlay.html">И. С. Тургенев «Бежин луг»: краткое содержание, анализ и читательский дневник</a><a href="/articles/t/tu/turgenev-i-s-bezhin-lug-chitat-onlay.html" class="action-hint">Читать разбор →</a></div>
                         </div>
                     </div>
                 </article>
             </main>
 
-            <!-- Сайдбар справа -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
                     <div class="widget search-widget">
@@ -212,7 +303,7 @@
 
                     <div class="widget">
                         <div class="widget-title">📌 Читайте также</div>
-                        <ul>
+                        <ul class="related-list">
                             <li><a href="/articles/t/tu/turgenev-i-pervaya-lyubov-chitatelsk.html">И. С. Тургенев «Первая любовь»: читательский дневник, анализ и главная мысль</a></li><li><a href="/articles/t/tu/turgenev-i-s-asya-chitatelskiy-dnevni.html">Читательский дневник: Иван Сергеевич Тургенев — «Ася»</a></li><li><a href="/articles/t/tu/turgenev-i-mumu-chitatelskiy-dnevni.html">Читательский дневник: Иван Тургенев «Муму» — анализ, сюжет и главная мысль</a></li><li><a href="/articles/t/tu/turgenev-i-bezhin-lug-chitatelskiy-dn.html">И. С. Тургенев «Бежин луг»: читательский дневник</a></li>
                         </ul>
                     </div>
@@ -228,6 +319,19 @@
     </footer>
 
     <script>
+    // Меню-бургер для мобильных
+    (function() {
+        var toggle = document.getElementById('menuToggle');
+        var nav = document.getElementById('navCategories');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('is-open');
+                toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
+            });
+        }
+    })();
+
+    // Живой поиск
     (function() {
         var input = document.getElementById('liveSearchInput');
         var results = document.getElementById('liveSearchResults');

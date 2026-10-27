@@ -56,12 +56,57 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
-        .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
-        .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
-        .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
+        
+        .menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #0f172a;
+        }
+        
+        .nav-categories {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.5rem;
+        }
+        .nav-categories.is-open { display: flex; }
+        
+        .nav-categories a {
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            background: #f8fafc;
+        }
+        .nav-categories a:hover { color: var(--primary); background: #eff6ff; text-decoration: none; }
+
+        @media (min-width: 860px) {
+            .menu-toggle { display: none; }
+            .nav-categories {
+                display: flex !important;
+                width: auto;
+                flex-direction: row;
+                gap: 0.75rem;
+                padding: 0;
+                border-top: none;
+                margin-top: 0;
+            }
+            .nav-categories a { background: transparent; padding: 0.35rem 0.6rem; }
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
@@ -70,13 +115,13 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка: контент слева, сайдбар справа */
+        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
         @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
 
         .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -86,9 +131,18 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-        .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget li a:hover { color: var(--primary); }
+        
+        /* Читайте также в сайдбаре - четко кликабельный стиль */
+        .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
+        .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .widget ul.related-list li a { font-size: 0.92rem; color: var(--primary); font-weight: 500; line-height: 1.45; display: flex; align-items: baseline; gap: 6px; }
+        .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
+        .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
+
+        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
+        .widget nav ul li a:hover { color: var(--primary); }
 
         /* Поисковая строка */
         .search-widget { position: relative; }
@@ -100,8 +154,9 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
-        .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+        .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
+        @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
@@ -111,12 +166,47 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
+        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-        .related-card { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; transition: border-color 0.2s; }
-        .related-card:hover { border-color: var(--primary); }
-        .related-card a { font-weight: 600; font-size: 0.95rem; color: var(--text-main); display: block; }
+        .related-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 1.1rem;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .related-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+            transform: translateY(-2px);
+        }
+        .related-card a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1e40af;
+            display: block;
+            line-height: 1.4;
+            text-decoration: underline;
+            text-decoration-color: #93c5fd;
+            text-underline-offset: 3px;
+        }
+        .related-card a:hover {
+            color: var(--primary);
+            text-decoration-color: var(--primary);
+        }
+        .related-card .action-hint {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
         footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
     </style>
@@ -125,7 +215,8 @@
     <header>
         <div class="container header-inner">
             <a href="/" class="logo">📚 Сдал на 5</a>
-            <nav class="nav-categories">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰ Меню</button>
+            <nav class="nav-categories" id="navCategories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
                 <a href="/category/analiz-proizvedeniy/">🔍 Анализ произведений</a>
@@ -144,7 +235,6 @@
         </nav>
 
         <div class="layout-grid">
-            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Русская народная сказка «Медное, серебряное и золотое царства»: анализ и читательский дневник</h1>
@@ -153,7 +243,9 @@
                         
                         
                         
-                        <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Русские народные сказки — это сокровищница народной мудрости, отражающая представления наших предков о добре, зле, чести и отваге. Сказка «Медное, серебряное и золотое царства» относится к числу классических волшебных сказок, в которых главный герой отправляется в опасное путешествие в потусторонний мир, чтобы спасти близких и победить зло.</p><h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание</h2><p>История начинается с того, что у старика со старухой рождается необычный сын — Иван, царевич или крестьянский сын (в зависимости от вариантов, но чаще всего Иван-царевич). У него необычайная сила. Когда он вырастает, то отправляется на поиски своих похищенных матушек или сестер, а также солнца и месяца.</p><p>На своем пути Иван спускается в подземное царство, где последовательно открывает три удивительных мира:</p><ul><li><strong>Медное царство</strong> — первое испытание героя, где все сияет медью, а охраняет его чудовище.</li><li><strong>Серебряное царство</strong> — более богатый и опасный мир, полный испытаний.</li><li><strong>Золотое царство</strong> — кульминационная точка путешествия, где томится главная пленница и хранится основная сила противника.</li></ul><p>Победив злых змеев и чудовищ с помощью верных помощников и волшебных предметов, Иван освобождает пленников и возвращается на родную землю, где устанавливается долгожданный мир.</p><h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главная мысль сказки</h2><p>Главная идея произведения заключается в том, что истинная сила заключается не только в физической мощи, но и в преданности, отваге, готовности пожертвовать собой ради близких. Сказка учит никогда не сдаваться перед лицом трудностей, преодолевать страх и верить в торжество справедливости. Добро всегда вознаграждается, а зло наказывается.</p><h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Иван (герой-богатырь)</strong> — смелый, решительный, добрый и справедливый юноша. Он не боится преград, готов защищать слабых и всегда держит свое слово.</li><li><strong>Чудища (Змеи о трех, шести, девяти и двенадцати головах)</strong> — воплощение темных сил, зла, коварства и разрушения.</li><li><strong>Помощники героя</strong> — волшебные животные или сказочные существа, которые выручают Ивана в критические моменты благодаря его доброте к ним.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5">План для читательского дневника</h2><ol><li><strong>Название сказки:</strong> «Медное, серебряное и золотое царства».</li><li><strong>Главные герои:</strong> Иван-царевич, его родители, змеи-чудовища, спасенные царевны.</li><li><strong>Краткий сюжет:</strong> Иван отправляется в подземный мир на поиски родных, преодолевает три царства (медное, серебряное, золотое), побеждает змей и возвращается домой победителем.</li><li><strong>Главная мысль:</strong> Смелость, доброта и преданность помогают преодолеть любые испытания и победить зло.</li><li><strong>Мое впечатление:</strong> Сказка учит быть отважным и верным своему долгу. Мне очень понравились описания подземных царств и подвиги главного героя.</li></ol>
+                        
+                        <h2 id="toc-1" id="toc-1" id="toc-1" id="toc-1" id="toc-1">Введение</h2><p>Русские народные сказки — это сокровищница народной мудрости, отражающая представления наших предков о добре, зле, чести и отваге. Сказка «Медное, серебряное и золотое царства» относится к числу классических волшебных сказок, в которых главный герой отправляется в опасное путешествие в потусторонний мир, чтобы спасти близких и победить зло.</p><h2 id="toc-2" id="toc-2" id="toc-2" id="toc-2" id="toc-2">Краткое содержание</h2><p>История начинается с того, что у старика со старухой рождается необычный сын — Иван, царевич или крестьянский сын (в зависимости от вариантов, но чаще всего Иван-царевич). У него необычайная сила. Когда он вырастает, то отправляется на поиски своих похищенных матушек или сестер, а также солнца и месяца.</p><p>На своем пути Иван спускается в подземное царство, где последовательно открывает три удивительных мира:</p><ul><li><strong>Медное царство</strong> — первое испытание героя, где все сияет медью, а охраняет его чудовище.</li><li><strong>Серебряное царство</strong> — более богатый и опасный мир, полный испытаний.</li><li><strong>Золотое царство</strong> — кульминационная точка путешествия, где томится главная пленница и хранится основная сила противника.</li></ul><p>Победив злых змеев и чудовищ с помощью верных помощников и волшебных предметов, Иван освобождает пленников и возвращается на родную землю, где устанавливается долгожданный мир.</p><h2 id="toc-3" id="toc-3" id="toc-3" id="toc-3" id="toc-3">Главная мысль сказки</h2><p>Главная идея произведения заключается в том, что истинная сила заключается не только в физической мощи, но и в преданности, отваге, готовности пожертвовать собой ради близких. Сказка учит никогда не сдаваться перед лицом трудностей, преодолевать страх и верить в торжество справедливости. Добро всегда вознаграждается, а зло наказывается.</p><h2 id="toc-4" id="toc-4" id="toc-4" id="toc-4" id="toc-4">Характеристика главных героев</h2><ul><li><strong>Иван (герой-богатырь)</strong> — смелый, решительный, добрый и справедливый юноша. Он не боится преград, готов защищать слабых и всегда держит свое слово.</li><li><strong>Чудища (Змеи о трех, шести, девяти и двенадцати головах)</strong> — воплощение темных сил, зла, коварства и разрушения.</li><li><strong>Помощники героя</strong> — волшебные животные или сказочные существа, которые выручают Ивана в критические моменты благодаря его доброте к ним.</li></ul><h2 id="toc-5" id="toc-5" id="toc-5" id="toc-5" id="toc-5">План для читательского дневника</h2><ol><li><strong>Название сказки:</strong> «Медное, серебряное и золотое царства».</li><li><strong>Главные герои:</strong> Иван-царевич, его родители, змеи-чудовища, спасенные царевны.</li><li><strong>Краткий сюжет:</strong> Иван отправляется в подземный мир на поиски родных, преодолевает три царства (медное, серебряное, золотое), побеждает змей и возвращается домой победителем.</li><li><strong>Главная мысль:</strong> Смелость, доброта и преданность помогают преодолеть любые испытания и победить зло.</li><li><strong>Мое впечатление:</strong> Сказка учит быть отважным и верным своему долгу. Мне очень понравились описания подземных царств и подвиги главного героя.</li></ol>
+                    
                     
                     
                     
@@ -163,13 +255,12 @@
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
-                            <div class="related-card"><a href="/articles/l/li/lisa-i-medved-russkaya-narodnaya-skazk.html">Русская народная сказка «Лиса и медведь»: анализ, сюжет и главная мысль</a></div><div class="related-card"><a href="/articles/m/mo/morozko-russkaya-narodnaya-skazka-chita.html">Русская народная сказка «Морозко»: читательский дневник, анализ и главная мысль</a></div><div class="related-card"><a href="/articles/n/na/narodnaya-skazka-morskoy-car-i-vasil.html">Русская народная сказка «Морской царь и Василиса Премудрая»: анализ, сюжет и читательский дневник</a></div>
+                            <div class="related-card"><a href="/articles/l/li/lisa-i-medved-russkaya-narodnaya-skazk.html">Русская народная сказка «Лиса и медведь»: анализ, сюжет и главная мысль</a><a href="/articles/l/li/lisa-i-medved-russkaya-narodnaya-skazk.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/m/mo/morozko-russkaya-narodnaya-skazka-chita.html">Русская народная сказка «Морозко»: читательский дневник, анализ и главная мысль</a><a href="/articles/m/mo/morozko-russkaya-narodnaya-skazka-chita.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/n/na/narodnaya-skazka-morskoy-car-i-vasil.html">Русская народная сказка «Морской царь и Василиса Премудрая»: анализ, сюжет и читательский дневник</a><a href="/articles/n/na/narodnaya-skazka-morskoy-car-i-vasil.html" class="action-hint">Читать разбор →</a></div>
                         </div>
                     </div>
                 </article>
             </main>
 
-            <!-- Сайдбар справа -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
                     <div class="widget search-widget">
@@ -187,7 +278,7 @@
 
                     <div class="widget">
                         <div class="widget-title">📌 Читайте также</div>
-                        <ul>
+                        <ul class="related-list">
                             <li><a href="/articles/s/sk/skazka-mednoe-serebryanoe-i-zolotoe.html">Русская народная сказка «Медное, серебряное и золотое царства»: анализ, герои и краткое содержание</a></li><li><a href="/articles/m/ma/masha-i-medved-russkaya-narodnaya-skazk.html">Русская народная сказка «Маша и медведь»: анализ, сюжет и читательский дневник</a></li><li><a href="/articles/n/na/narodnaya-skazka-marya-morevna-chit.html">Русская народная сказка «Марья Моревна»: анализ, герои и читательский дневник</a></li><li><a href="/articles/n/na/narodnaya-skazka-lisa-i-teterev-chit.html">Русская народная сказка «Лиса и тетерев»: анализ, главная мысль и читательский дневник</a></li>
                         </ul>
                     </div>
@@ -203,6 +294,19 @@
     </footer>
 
     <script>
+    // Меню-бургер для мобильных
+    (function() {
+        var toggle = document.getElementById('menuToggle');
+        var nav = document.getElementById('navCategories');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('is-open');
+                toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
+            });
+        }
+    })();
+
+    // Живой поиск
     (function() {
         var input = document.getElementById('liveSearchInput');
         var results = document.getElementById('liveSearchResults');

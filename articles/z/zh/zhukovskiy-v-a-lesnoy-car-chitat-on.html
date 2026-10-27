@@ -56,12 +56,57 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* Шапка с бургером */
         header { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; }
-        .nav-categories { display: flex; gap: 1rem; align-items: center; overflow-x: auto; font-size: 0.95rem; }
-        .nav-categories a { color: var(--text-muted); font-weight: 500; white-space: nowrap; padding: 0.25rem 0.5rem; border-radius: 6px; }
-        .nav-categories a:hover { color: var(--primary); background: #f1f5f9; text-decoration: none; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0.5rem 0; flex-wrap: wrap; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
+        
+        .menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #0f172a;
+        }
+        
+        .nav-categories {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.5rem;
+        }
+        .nav-categories.is-open { display: flex; }
+        
+        .nav-categories a {
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            background: #f8fafc;
+        }
+        .nav-categories a:hover { color: var(--primary); background: #eff6ff; text-decoration: none; }
+
+        @media (min-width: 860px) {
+            .menu-toggle { display: none; }
+            .nav-categories {
+                display: flex !important;
+                width: auto;
+                flex-direction: row;
+                gap: 0.75rem;
+                padding: 0;
+                border-top: none;
+                margin-top: 0;
+            }
+            .nav-categories a { background: transparent; padding: 0.35rem 0.6rem; }
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
@@ -70,13 +115,13 @@
         .breadcrumbs span { margin: 0 0.4rem; color: #94a3b8; }
         .breadcrumbs .current { color: #0f172a; font-weight: 500; }
 
-        /* Сетка: контент слева, сайдбар справа */
+        /* Сетка */
         .layout-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
         @media (min-width: 992px) {
             .layout-grid { grid-template-columns: 1fr 300px; }
         }
 
-        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .main-article { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
         @media (min-width: 992px) { .main-article { padding: 2.5rem; } }
 
         .sidebar-sticky { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -86,9 +131,18 @@
 
         .widget { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
         .widget-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: #334155; }
-        .widget ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-        .widget li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
-        .widget li a:hover { color: var(--primary); }
+        
+        /* Читайте также в сайдбаре - четко кликабельный стиль */
+        .widget ul.related-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .widget ul.related-list li { border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; }
+        .widget ul.related-list li:last-child { border-bottom: none; padding-bottom: 0; }
+        .widget ul.related-list li a { font-size: 0.92rem; color: var(--primary); font-weight: 500; line-height: 1.45; display: flex; align-items: baseline; gap: 6px; }
+        .widget ul.related-list li a:before { content: "→"; color: #94a3b8; font-size: 0.9rem; flex-shrink: 0; }
+        .widget ul.related-list li a:hover { text-decoration: underline; color: var(--primary-hover); }
+
+        .widget nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .widget nav ul li a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: block; }
+        .widget nav ul li a:hover { color: var(--primary); }
 
         /* Поисковая строка */
         .search-widget { position: relative; }
@@ -100,8 +154,9 @@
         .search-item:hover { background-color: #f8fafc; color: var(--primary); text-decoration: none; }
         .search-item-meta { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
 
-        .main-article h1 { font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
-        .main-article h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+        .main-article h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; word-wrap: break-word; }
+        @media (min-width: 768px) { .main-article h1 { font-size: 2.2rem; } }
+        .main-article h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 1rem; color: #1e293b; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
         .main-article h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #334155; }
         .main-article p { margin-bottom: 1.25rem; color: #334155; font-size: 1.05rem; }
         .main-article ul, .main-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: #334155; }
@@ -111,12 +166,47 @@
         .main-article th, .main-article td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
         .main-article th { background: #f8fafc; font-weight: 600; color: #0f172a; }
 
+        /* Блок похожих статей внизу - явный кликабельный вид */
         .bottom-related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
         .bottom-related h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-        .related-card { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; transition: border-color 0.2s; }
-        .related-card:hover { border-color: var(--primary); }
-        .related-card a { font-weight: 600; font-size: 0.95rem; color: var(--text-main); display: block; }
+        .related-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 1.1rem;
+            transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .related-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.12);
+            transform: translateY(-2px);
+        }
+        .related-card a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1e40af;
+            display: block;
+            line-height: 1.4;
+            text-decoration: underline;
+            text-decoration-color: #93c5fd;
+            text-underline-offset: 3px;
+        }
+        .related-card a:hover {
+            color: var(--primary);
+            text-decoration-color: var(--primary);
+        }
+        .related-card .action-hint {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
         footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 4rem; }
     </style>
@@ -125,7 +215,8 @@
     <header>
         <div class="container header-inner">
             <a href="/" class="logo">📚 Сдал на 5</a>
-            <nav class="nav-categories">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰ Меню</button>
+            <nav class="nav-categories" id="navCategories">
                 <a href="/category/chitatelskiy-dnevnik/">📖 Читательский дневник</a>
                 <a href="/category/kratkoe-soderzhanie/">⏱️ Краткие содержания</a>
                 <a href="/category/analiz-proizvedeniy/">🔍 Анализ произведений</a>
@@ -144,26 +235,26 @@
         </nav>
 
         <div class="layout-grid">
-            <!-- Основной контент слева -->
             <main class="main-article">
                 <article>
                     <h1>Василий Жуковский — «Лесной царь»: анализ баллады и читательский дневник</h1>
                     <div class="article-content">
                         
-                        <h2 id="toc-1">Введение</h2><p>Баллада «Лесной царь» Василия Андреевича Жуковского — одно из самых известных и мистических произведений русской литературы XIX века. Написанная в жанре романтизма, она представляет собой вольный перевод одноименной баллады немецкого поэта Иоганна Вольфганга Гете «Erlkönig». Произведение наполнено драматизмом, динамикой и глубоким символизмом.</p><h2 id="toc-2">Краткое содержание</h2><p>Сюжет баллады разворачивается холодной и темной ночью. Отец верхом на коне быстро скачет через густой лес, прижимая к груди больного сына. Ребенок бредит, ему кажется, что в темноте за ними следует Лесной царь — владыка сумрачного леса, манящий мальчика к себе.</p><ul><li><b>Слова Лесного царя:</b> дух предлагает ребенку роскошную жизнь в своем царстве, обещает золотые цветы, игры с русалками и песни.</li><li><b>Реакция мальчика:</b> ребенок напуган, он отчаянно цепляется за отца, чувствуя смертельную опасность.</li><li><b>Реакция отца:</b> отец пытается успокоить сына, убеждая его, что все пугающие звуки и образы — лишь ночной туман, шепот ветра в ветвях или игра теней.</li><li><b>Кульминация и финал:</b> конь мчится изо всех сил, но когда они наконец добираются до пункта назначения, отец обнаруживает, что ребенок в его руках уже мертв.</li></ul><h2 id="toc-3">Главная мысль и проблематика</h2><p>Главная мысль баллады заключается в противопоставлении рационального, материального мира взрослых и тонкого, интуитивного восприятия мира детьми. В то время как отец пытается все объяснить с точки зрения логики и науки, ребенок обладает душевной чуткостью, позволяющей ему видеть потустороннюю реальность.</p><p>Основная проблема произведения — хрупкость человеческой жизни перед лицом стихийных и непознанных сил природы и неизбежности смерти.</p><h2 id="toc-4">Характеристика героев</h2><ul><li><b>Отец:</b> любящий, заботливый, но при этом земной и рациональный человек. Он слепо верит в силу разума и не хочет верить в мистику, что в итоге приводит к трагическому опозданию.</li><li><b>Сын:</b> чувствительный, болезненный и чистый душой мальчик. Он обладает даром провидения и отчетливо слышит голос смерти, от которого не может защитить ни один родитель.</li><li><b>Лесной царь:</b> зловещий фольклорный персонаж, олицетворяющий холодную, бездушную стихию природы, соблазн и саму смерть.</li></ul><h2 id="toc-5">Для читательского дневника</h2><blockquote><p><b>Автор:</b> Жуковский В.А.<br><b>Название:</b> Лесной царь<br><b>Жанр:</b> Баллада<br><b>Главные герои:</b> Отец, больной сын, Лесной царь.<br><b>Мое мнение:</b> Произведение произвело на меня сильное и гнетущее впечатление. Жуковскому удалось мастерски передать атмосферу тревоги и страха через диалог отца и сына, где напряжение нарастает с каждой строчкой.</p></blockquote>
+                        
+                        <h2 id="toc-1" id="toc-1">Введение</h2><p>Баллада «Лесной царь» Василия Андреевича Жуковского — одно из самых известных и мистических произведений русской литературы XIX века. Написанная в жанре романтизма, она представляет собой вольный перевод одноименной баллады немецкого поэта Иоганна Вольфганга Гете «Erlkönig». Произведение наполнено драматизмом, динамикой и глубоким символизмом.</p><h2 id="toc-2" id="toc-2">Краткое содержание</h2><p>Сюжет баллады разворачивается холодной и темной ночью. Отец верхом на коне быстро скачет через густой лес, прижимая к груди больного сына. Ребенок бредит, ему кажется, что в темноте за ними следует Лесной царь — владыка сумрачного леса, манящий мальчика к себе.</p><ul><li><b>Слова Лесного царя:</b> дух предлагает ребенку роскошную жизнь в своем царстве, обещает золотые цветы, игры с русалками и песни.</li><li><b>Реакция мальчика:</b> ребенок напуган, он отчаянно цепляется за отца, чувствуя смертельную опасность.</li><li><b>Реакция отца:</b> отец пытается успокоить сына, убеждая его, что все пугающие звуки и образы — лишь ночной туман, шепот ветра в ветвях или игра теней.</li><li><b>Кульминация и финал:</b> конь мчится изо всех сил, но когда они наконец добираются до пункта назначения, отец обнаруживает, что ребенок в его руках уже мертв.</li></ul><h2 id="toc-3" id="toc-3">Главная мысль и проблематика</h2><p>Главная мысль баллады заключается в противопоставлении рационального, материального мира взрослых и тонкого, интуитивного восприятия мира детьми. В то время как отец пытается все объяснить с точки зрения логики и науки, ребенок обладает душевной чуткостью, позволяющей ему видеть потустороннюю реальность.</p><p>Основная проблема произведения — хрупкость человеческой жизни перед лицом стихийных и непознанных сил природы и неизбежности смерти.</p><h2 id="toc-4" id="toc-4">Характеристика героев</h2><ul><li><b>Отец:</b> любящий, заботливый, но при этом земной и рациональный человек. Он слепо верит в силу разума и не хочет верить в мистику, что в итоге приводит к трагическому опозданию.</li><li><b>Сын:</b> чувствительный, болезненный и чистый душой мальчик. Он обладает даром провидения и отчетливо слышит голос смерти, от которого не может защитить ни один родитель.</li><li><b>Лесной царь:</b> зловещий фольклорный персонаж, олицетворяющий холодную, бездушную стихию природы, соблазн и саму смерть.</li></ul><h2 id="toc-5" id="toc-5">Для читательского дневника</h2><blockquote><p><b>Автор:</b> Жуковский В.А.<br><b>Название:</b> Лесной царь<br><b>Жанр:</b> Баллада<br><b>Главные герои:</b> Отец, больной сын, Лесной царь.<br><b>Мое мнение:</b> Произведение произвело на меня сильное и гнетущее впечатление. Жуковскому удалось мастерски передать атмосферу тревоги и страха через диалог отца и сына, где напряжение нарастает с каждой строчкой.</p></blockquote>
+                    
                     
                     </div>
 
                     <div class="bottom-related">
                         <h3>📚 Рекомендуемые материалы по теме</h3>
                         <div class="related-grid">
-                            <div class="related-card"><a href="/articles/g/ga/garshin-v-lyagushka-puteshestvennica.html">Всеволод Гаршин «Лягушка-путешественница»: анализ, сюжет и главная мысль</a></div><div class="related-card"><a href="/articles/g/ga/garshin-v-m-skazka-o-zhabe-i-roze-chita-2.html">В. М. Гаршин «Сказка о Жабе и Розе»: анализ второй части и читательский дневник</a></div>
+                            <div class="related-card"><a href="/articles/g/ga/garshin-v-lyagushka-puteshestvennica.html">Всеволод Гаршин «Лягушка-путешественница»: анализ, сюжет и главная мысль</a><a href="/articles/g/ga/garshin-v-lyagushka-puteshestvennica.html" class="action-hint">Читать разбор →</a></div><div class="related-card"><a href="/articles/g/ga/garshin-v-m-skazka-o-zhabe-i-roze-chita-2.html">В. М. Гаршин «Сказка о Жабе и Розе»: анализ второй части и читательский дневник</a><a href="/articles/g/ga/garshin-v-m-skazka-o-zhabe-i-roze-chita-2.html" class="action-hint">Читать разбор →</a></div>
                         </div>
                     </div>
                 </article>
             </main>
 
-            <!-- Сайдбар справа -->
             <aside class="sidebar">
                 <div class="sidebar-sticky">
                     <div class="widget search-widget">
@@ -181,7 +272,7 @@
 
                     <div class="widget">
                         <div class="widget-title">📌 Читайте также</div>
-                        <ul>
+                        <ul class="related-list">
                             <li><a href="/articles/z/zh/zhukovskiy-v-a-lesnoy-car-chitatelsk.html">В. А. Жуковский — «Лесной царь»: анализ баллады и материал для читательского дневника</a></li><li><a href="/articles/z/zh/zhukovskiy-v-a-kak-myshi-kota-khoronili-ch.html">«Как мыши кота хоронили» В. А. Жуковского: анализ и читательский дневник</a></li><li><a href="/articles/z/zh/zhukovskiy-v-a-kak-myshi-kota-khoronili.html">«Как мыши кота хоронили» В. А. Жуковского: анализ произведения для школы</a></li><li><a href="/articles/g/ga/garshin-v-m-skazka-o-zhabe-i-roze-chita.html">В. М. Гаршин «Сказка о Жабе и Розе»: анализ, краткое содержание и читательский дневник</a></li>
                         </ul>
                     </div>
@@ -197,6 +288,19 @@
     </footer>
 
     <script>
+    // Меню-бургер для мобильных
+    (function() {
+        var toggle = document.getElementById('menuToggle');
+        var nav = document.getElementById('navCategories');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('is-open');
+                toggle.textContent = nav.classList.contains('is-open') ? '✕ Закрыть' : '☰ Меню';
+            });
+        }
+    })();
+
+    // Живой поиск
     (function() {
         var input = document.getElementById('liveSearchInput');
         var results = document.getElementById('liveSearchResults');
